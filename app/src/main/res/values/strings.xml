@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">科师有约</string>
+    <string name="welcome_tips">您可以把意见或者建议发送给我，然后我会将消息反馈给学生会或者学校组织。</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="login_username_error">请输入有效账号</string>
+    <string name="login_password_error">请输入密码</string>
+    <string name="password">密码</string>
+    <string name="re_password">重复密码</string>
+    <string name="username">用户名</string>
+    <string name="signup">创建账号</string>
+    <string name="login">登录</string>
+    <string name="jump_login">已有账号？马上登录</string>
+    <string name="jump_signup">没有账号？创建一个</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="phone">手机号</string>
+    <string name="logout">退出登录</string>
+    <string name="contacts">校园通讯录</string>
+    <string name="xiaoli_tip">在校生返校时间：2017年8月26日、27日\n在校生上课时间：2017年8月28日\n新生报到时间：2017年9月13日\n新生入学教育以及军训：2017年9月14-9月24日。\n新生上课时间：2017年9月25日（第五周）\n节假日：与国家基本法定规定时间一致。\n创新创业活动周以及考试周：第10周10月30日-11月5日</string>
+    <string name="xiaoli_tip0">1.寒假：2018年1月22日-3月4日。\n2.中秋节：10月4日中秋节放假。\n3.国庆节：9月30日-10月8日。\n4.元旦：12月30日-1月1日</string>
+    <string name="stu_no_tips">学号</string>
+
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_choose_xnd">ChooseXndActivity</string>
+
+</resources>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="17"
+        android:background="@mipmap/img_user_bg"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="63dp"
+            android:src="@mipmap/ic_home_news" />
+
+        <TextView
+            android:id="@+id/tv_info_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:text="用户名"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_info_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@color/orange"
+            android:padding="3dp"
+            android:text="已认证"
+            android:textColor="#FFF"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="35"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <LinearLayout
+            android:id="@+id/ll_my_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:lines="1"
+                android:src="@mipmap/center_icon_notation_nor" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:gravity="left"
+                android:lines="1"
+                android:maxLength="20"
+                android:text="我的信息"
+                android:textColor="?android:attr/panelColorForeground"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/image_bg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+        <LinearLayout
+            android:id="@+id/ll_my_quanyi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:lines="1"
+                android:src="@mipmap/ic_quanyi" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:gravity="left"
+                android:lines="1"
+                android:maxLength="20"
+                android:text="权益保障"
+                android:textColor="?android:attr/panelColorForeground"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/image_bg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_my_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:lines="1"
+                android:src="@mipmap/center_icon_setting_nor" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:gravity="left"
+                android:lines="1"
+                android:maxLength="20"
+                android:text="设置"
+                android:textColor="?android:attr/panelColorForeground"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/image_bg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+        <LinearLayout
+            android:id="@+id/ll_my_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:lines="1"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp"
+                android:src="@mipmap/ic_update" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:gravity="left"
+                android:lines="1"
+                android:maxLength="20"
+                android:text="检查更新"
+                android:textColor="?android:attr/panelColorForeground"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/image_bg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+        <LinearLayout
+            android:id="@+id/ll_my_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:lines="1"
+                android:src="@mipmap/center_icon_banben_nor" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:gravity="left"
+                android:lines="1"
+                android:maxLength="20"
+                android:text="关于我们"
+                android:textColor="?android:attr/panelColorForeground"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/image_bg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+        <LinearLayout
+            android:id="@+id/ll_my_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:lines="1"
+                android:src="@mipmap/center_icon_mine_feedback_nor" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="10"
+                android:gravity="left"
+                android:lines="1"
+                android:maxLength="20"
+                android:text="意见反馈"
+                android:textColor="?android:attr/panelColorForeground"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/image_bg" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+        <Button
+            android:id="@+id/btn_my_logout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="14dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_logout_selector"
+            android:text="@string/logout" />
+    </LinearLayout>
+
+
+</LinearLayout>

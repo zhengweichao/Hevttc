@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--按钮选择器的新方式，注意在上面的一定要写在前面-->
+    <!--<item android:state_pressed="true" ></item>-->
+    <!--<item android:drawable="@mipmap/ic_launcher"></item>-->
+    <item android:state_pressed="true" android:drawable="@color/primary" />
+    <item android:state_pressed="false" android:drawable="@color/bt_pre" />
+
+</selector>

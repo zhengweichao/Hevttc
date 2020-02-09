@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="top.vchao.hevttc.activity.TeamDetailActivity">
+
+    <include layout="@layout/layout_title_bar_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_team_detail_logo"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/tv_team_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我是标题"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_team_detail_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="我是时间" />
+
+            <TextView
+                android:id="@+id/tv_team_detail_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="我是内容"
+                android:textColor="#444" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/love"
+    android:orientation="vertical"
+    tools:context="top.vchao.hevttc.activity.LoveActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#eb6b6a" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@mipmap/bg_love_title" />
+
+        <Button
+            android:id="@id/btn_back"
+            style="@style/btn_title_left"
+            android:layout_alignParentBottom="false"
+            android:background="@drawable/btn_back" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_love"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_add_love"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:background="@null"
+            android:src="@drawable/btn_puls"
+            app:srcCompat="@drawable/btn_puls" />
+    </RelativeLayout>
+</LinearLayout>

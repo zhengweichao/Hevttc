@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="blue">#33b5e5</color>
+    <color name="themeMemorandum">#ff9933</color>
+
+    <color name="colorBlue">#2e94da</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorText">#535252</color>
+    <color name="HomeColor">#F16C4D</color>
+    <color name="transparent">#0000</color>
+    <color name="accent">#FFF</color>
+
+    <color name="start1">#fbaa47</color>
+    <color name="start2">#eb5559</color>
+    <color name="start3">#459efb</color>
+    <color name="start4">#8ac44a</color>
+
+    <color name="bt_pre">#fc5902</color>
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_darker">#1f2e8e</color>
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black_deep">#000</color>
+    <color name="gray">#ff898989</color>
+    <color name="yellow">#fdd210</color>
+    <color name="orange">#f7840f</color>
+    <color name="love">#ffebaf</color>
+</resources>

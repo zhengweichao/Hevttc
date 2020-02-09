@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="20dp">
+
+
+    <TextView
+        android:id="@+id/tvProperty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="6"
+        android:gravity="left"
+        android:lines="1"
+        android:text="重复"
+        android:textColor="?android:attr/panelColorForeground"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="6"
+        android:gravity="right"
+        android:lines="1"
+        android:maxLength="20"
+        android:text="周一，周二，周三，周四，周五，周六，周日"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/image_bg" />
+
+
+</LinearLayout>

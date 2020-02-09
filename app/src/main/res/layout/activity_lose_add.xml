@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="top.vchao.hevttc.activity.LoseAddActivity">
+
+    <include layout="@layout/layout_title_bar_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发布类型： " />
+
+                <Spinner
+                    android:id="@+id/sp_lose_kind"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/losekinds" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="时间： " />
+
+                <Spinner
+                    android:id="@+id/spnYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_drop_down_normal"
+                    android:spinnerMode="dialog" />
+
+                <TextView
+                    android:id="@+id/tvYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/year"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_drop_down_normal"
+                    android:gravity="right"
+                    android:spinnerMode="dialog" />
+
+                <TextView
+                    android:id="@+id/tvMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/month"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_drop_down_normal"
+                    android:gravity="right"
+                    android:spinnerMode="dialog" />
+
+                <TextView
+                    android:id="@+id/tvDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/et_bg"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="标题：" />
+
+                <EditText
+                    android:id="@+id/et_lose_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/et_bg"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/et_lose_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="6dp"
+                    android:layout_weight="10"
+                    android:background="@null"
+                    android:textSize="16sp"
+                    android:lines="3"
+                    android:gravity="start"
+                    android:hint="请详细描述物品特征哦！" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_lose_add_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:choiceMode="singleChoice"
+                    android:divider="@null"
+                    android:fadingEdge="none"
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbarStyle="outsideOverlay"
+                    app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                    app:spanCount="3"
+                    tools:listitem="@layout/list_item_image" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/et_bg"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="联系方式：" />
+
+                <EditText
+                    android:id="@+id/et_lose_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_lose_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:padding="16dp"
+                android:text="发布" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

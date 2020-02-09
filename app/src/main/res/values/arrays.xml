@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="losekinds">
+        <item>寻物启事</item>
+        <item>失物招领</item>
+    </string-array>
+
+    <string-array name="buykinds">
+        <item>我想买入</item>
+        <item>我想出手</item>
+    </string-array>
+
+    <string-array name="feedkinds">
+        <item>食堂投诉</item>
+        <item>后勤报修</item>
+        <item>宿舍管理</item>
+        <item>学校建议</item>
+        <item>其它问题</item>
+    </string-array>
+
+</resources>

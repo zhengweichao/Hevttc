@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="登录教务系统"
+            android:textColor="#333333"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/usernameWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_course_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="学号"
+                android:inputType="text"
+                android:textColor="@color/colorText" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/passwordWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <EditText
+                android:id="@+id/et_course_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:textColor="@color/colorText" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="0.5">
+
+                <EditText
+                    android:id="@+id/et_course_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="验证码"
+                    android:inputType="text"
+                    android:textColor="@color/colorText" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/iv_checkCode"
+                android:layout_width="0dp"
+                android:clickable="true"
+                android:layout_gravity="center_vertical"
+                android:layout_height="40dp"
+                android:onClick="loginClick"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_course_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:onClick="loginClick"
+            android:text="登录"
+            android:textColor="@color/colorText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/tv_jw_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="loginClick"
+            android:text="科师教务网地址：http://121.22.25.47"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

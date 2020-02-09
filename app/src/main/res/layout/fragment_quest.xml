@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="考题"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/_rg_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp">
+
+        <RadioButton
+            android:id="@+id/_rb_option_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="选项A"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/_rb_option_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="选项B"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/_rb_option_c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="选项C"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/_rb_option_d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="选项D"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:visibility="invisible"
+            android:id="@+id/et_answer"
+            android:layout_width="346dp"
+            android:layout_height="56dp"
+            android:lines="4"
+            android:padding="5dp"
+            android:hint="请输入答案"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/_iv_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_previous1"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></LinearLayout>
+
+
+</LinearLayout>

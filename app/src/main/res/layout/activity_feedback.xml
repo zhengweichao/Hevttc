@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0eff2"
+    android:orientation="vertical"
+    tools:context="top.vchao.hevttc.activity.FeedbackActivity">
+
+    <include layout="@layout/layout_title_bar_back" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您有什么问题或者建议想对我们说？"
+            android:textColor="#037be8"
+            android:layout_marginTop="6dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_feedback_theme"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:layout_marginTop="10dp"
+            android:hint="您的主题:" />
+
+        <EditText
+            android:id="@+id/et_feedback_content"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:lines="6"
+            android:gravity="start"
+            android:hint="您的宝贵意见，就是我们进步的源泉" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="(*^_^*) 请详细描述您遇到的问题，有助于我们快速定位并解决问题，或留下您宝贵的建议或意见。我们会认真进行评估！" />
+
+        <Button
+            android:id="@+id/bt_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="问题提交"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</LinearLayout>

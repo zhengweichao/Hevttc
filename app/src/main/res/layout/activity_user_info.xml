@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f0f4"
+    android:orientation="vertical"
+    tools:context="top.vchao.hevttc.activity.UserInfoActivity">
+
+    <include layout="@layout/layout_title_bar_back" />
+
+    <LinearLayout
+        android:id="@+id/ll_user_info_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fefefe"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="left"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="姓名"
+            android:textColor="?android:attr/panelColorForeground"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_user_info_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="right"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="姓名"
+            android:textColor="#aaaeb0"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/image_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_info_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#fefefe"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="left"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="性别"
+            android:textColor="?android:attr/panelColorForeground"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_user_info_sex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="right"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="性别"
+            android:textColor="#aaaeb0"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/image_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_info_stuno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#fefefe"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="left"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="学号"
+            android:textColor="?android:attr/panelColorForeground"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_user_info_stuno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="right"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="学号"
+            android:textColor="#aaaeb0"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/image_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_info_tel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#fefefe"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="left"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="手机号"
+            android:textColor="?android:attr/panelColorForeground"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_user_info_tel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="right"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="手机号"
+            android:textColor="#aaaeb0"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/image_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_info_yuan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#fefefe"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="left"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="院系"
+            android:textColor="?android:attr/panelColorForeground"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_user_info_yuan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="right"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="院系"
+            android:textColor="#aaaeb0"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/image_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_info_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#fefefe"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="left"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="专业"
+            android:textColor="?android:attr/panelColorForeground"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_user_info_class"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="right"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="专业"
+            android:textColor="#aaaeb0"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/image_bg" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_info_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#fefefe"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="left"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="创建时间"
+            android:textColor="?android:attr/panelColorForeground"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_user_info_created"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
+            android:gravity="right"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="创建时间"
+            android:textColor="#aaaeb0"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/image_bg" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_real_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="实名认证" />
+</LinearLayout>

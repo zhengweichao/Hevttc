@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="top.vchao.hevttc.activity.buyDetailActivity">
+
+    <include layout="@layout/layout_title_bar_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_detail_buy_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:text="出一个小镜子"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_detail_buy_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:text="10元"
+                android:textColor="@color/HomeColor"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_detail_buy_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:text="郑卫超"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_detail_buy_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:text="2017-10-13"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_detail_buy_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:text="因为大四毕业了，所以出一个小镜子，只需要10块钱哦！"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/tv_detail_buy_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:text="联系方式：13791516886"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_buy_detail"
+                android:layout_width="360dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/bt_detail_buy_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/select_button"
+                android:padding="5dp"
+                android:text="拨打电话"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

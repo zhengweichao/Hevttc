@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/tv_type1_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="习近平：坚持走中国特色社会主义社会治理之路"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_type1_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新华社"
+            android:textColor="#777"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_type1_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="9月19日"
+            android:textColor="#777"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="12dp"
+        android:background="#aaa" />
+</LinearLayout>

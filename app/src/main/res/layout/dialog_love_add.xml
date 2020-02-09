@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/et_bg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="要表白的人：" />
+
+        <EditText
+            android:id="@+id/et_love_add_touser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@null" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_love_add_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/et_bg"
+        android:gravity="start"
+        android:hint="你想对他说些什么呢？有爱大胆说出来哦！"
+        android:lines="4"
+        android:padding="5dp" />
+
+    <Switch
+        android:id="@+id/swi_noname"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:checked="true"
+        android:focusable="false"
+        android:text="匿名表白：" />
+
+</LinearLayout>

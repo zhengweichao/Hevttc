@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp">
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="周次" />
+
+    <TextView
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="@color/gray" />
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="一" />
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="二" />
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="三" />
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="四" />
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="五" />
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="六" />
+
+    <TextView
+        style="@style/txt_xiaoli_bar"
+        android:text="日" />
+</LinearLayout>

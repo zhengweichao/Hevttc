@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="top.vchao.hevttc.activity.XiaoliActivity">
+
+    <include layout="@layout/layout_title_bar_back" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_xiaoli" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="今天是"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_date_today"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_horizontal"
+            android:text="2017年09月22日"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_date_today_nongli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date_today"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="八月初三"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#32b268">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="2017-2018学年第一学期"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_xiaoxi_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"
+            android:text="说明"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/xiaoli_bar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="1" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="28" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="29" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="30" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="31" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:background="@drawable/circle_quan"
+                    android:text="9月" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="2" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="4" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="6" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="7" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="8" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="9" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="3" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="11" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="12" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="13" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="14" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="15" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="16" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:layout_height="match_parent"
+                    android:text="17" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="4" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="18" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="19" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="21" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="22" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="23" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="5" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="25" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="26" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="27" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="28" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="29" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="30" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="国庆" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="6" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="3" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="中秋" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="6" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="7" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="8" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="7" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="9" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="10" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="11" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="12" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="13" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="14" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="8" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="16" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="17" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="18" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="19" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="21" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="22" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="9" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="23" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="24" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="25" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="26" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="27" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="28" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="29" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="10" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="30" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="31" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:background="@drawable/circle_quan"
+                    android:text="11月" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="3" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="4" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="11" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="6" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="7" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="8" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="9" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="10" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="11" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="12" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="13" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="14" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="15" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="16" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="17" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="18" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="19" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="13" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="21" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="22" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="23" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="24" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="25" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="26" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="14" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="27" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="28" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="29" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="30" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:background="@drawable/circle_quan"
+                    android:text="12月" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="15" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="4" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="6" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="7" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="8" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="9" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="16" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="11" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="12" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="13" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="14" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="15" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="16" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="17" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="17" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="18" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="19" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="21" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="22" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="23" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="18" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="25" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="26" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="27" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="28" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="29" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="30" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="31" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="19" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date_jiaqi"
+                    android:text="元旦" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="3" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="4" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="5" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="6" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="7" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="20" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="8" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="9" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="10" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="11" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="12" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="13" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txt_xiaoli_bar"
+                    android:text="21" />
+
+                <TextView
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="15" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="16" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="17" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="18" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="19" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="20" />
+
+                <TextView
+                    style="@style/txt_xiaoli_date"
+                    android:text="21" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
