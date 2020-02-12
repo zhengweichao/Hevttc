@@ -14,7 +14,7 @@ import top.vchao.hevttc.jw.bean.Course;
  * 显示课程信息
  * Created by FatCat on 2016/10/3.
  */
-public class CourseInfoActivity extends BaseActivity0 {
+public class CourseInfoActivity extends BaseAppCompatActivity {
 
     private Toolbar mToolbar;
     private Course course;

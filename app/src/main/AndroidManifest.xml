@@ -69,7 +69,7 @@
             android:name="top.vchao.hevttc.activity.LoginActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
-            android:name="top.vchao.hevttc.activity.SignupActivity"
+            android:name="top.vchao.hevttc.activity.SignUpActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name="com.mob.tools.MobUIShell"

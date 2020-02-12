@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="指导老师：王奭老师"
+        android:text="slogon：科师有约，与你相约。让校园生活更简单！"
         android:textSize="16sp" />
 
     <TextView

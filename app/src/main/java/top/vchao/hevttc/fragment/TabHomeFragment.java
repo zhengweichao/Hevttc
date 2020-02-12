@@ -87,11 +87,9 @@ public class TabHomeFragment extends BaseFragment {
             null, null, null
     };
 
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
-    protected View initView() {
-        View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
-        return inflate;
+    public int getLayoutId() {
+        return R.layout.fragment_home;
     }
 
     @Override

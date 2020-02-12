@@ -6,7 +6,6 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -28,12 +27,12 @@ import top.vchao.hevttc.utils.ToastUtil;
  * @ 描述：注册页面
  * @ 作者: vchao
  */
-public class SignupActivity extends BaseActivity {
+public class SignUpActivity extends BaseActivity {
 
     @BindView(R.id.et_username)
     EditText etUserName;
     @BindView(R.id.et_mobile)
-    EditText etMoblie;
+    EditText etMobile;
     @BindView(R.id.et_password)
     EditText etPassword;
     @BindView(R.id.et_re_password)
@@ -43,7 +42,7 @@ public class SignupActivity extends BaseActivity {
     @BindView(R.id.et_auth_code)
     EditText etAuthCode;
     @BindView(R.id.btn_getcode)
-    Button btnGetcode;
+    Button btnGetCode;
 
     @Override
     protected int getLayoutId() {
@@ -53,10 +52,10 @@ public class SignupActivity extends BaseActivity {
     /**
      * 注册方法
      */
-    public void signup() {
+    public void signUp() {
         String code = etAuthCode.getText().toString();
         if (!validate()) {
-            onSignupFailed(2);
+            onSignUpFailed(2);
             return;
         }
         if (code.isEmpty()) {
@@ -67,13 +66,13 @@ public class SignupActivity extends BaseActivity {
         }
         btnSignUp.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(SignupActivity.this,
+        final ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("创建账号...");
         progressDialog.show();
 
-        String mobile = etMoblie.getText().toString();
+        String mobile = etMobile.getText().toString();
         String password = etPassword.getText().toString();
 
         MyUser user = new MyUser();
@@ -85,12 +84,12 @@ public class SignupActivity extends BaseActivity {
             public void done(MyUser user, BmobException e) {
                 if (e == null) {
                     LogUtils.e("注册成功:" + user.getMobilePhoneNumber() + "-" + user.getObjectId());
-                    onSignupSuccess();
+                    onSignUpSuccess();
                     //对话框消失
                     progressDialog.dismiss();
                 } else {
                     LogUtils.e("注册失败" + e.getMessage());
-                    onSignupFailed(2);
+                    onSignUpFailed(2);
                     progressDialog.dismiss();
                 }
 
@@ -103,36 +102,36 @@ public class SignupActivity extends BaseActivity {
      * 注册失败，按钮置为可用
      * 依据传参不同，进行不同吐司
      */
-    public void onSignupFailed(int i) {
+    public void onSignUpFailed(int i) {
         if (i == 1) {
-            ToastUtil.show(getBaseContext(), "该用户名已经被注册", Toast.LENGTH_LONG);
+            ToastUtil.showShort("该用户名已经被注册");
         } else {
-            ToastUtil.show(getBaseContext(), "注册失败", Toast.LENGTH_LONG);
+            ToastUtil.showShort("注册失败");
         }
         btnSignUp.setEnabled(true);
     }
 
-    public void onSignupSuccess() {
+    public void onSignUpSuccess() {
         btnSignUp.setEnabled(true);
         setResult(RESULT_OK, null);
 
-        ToastUtil.show(SignupActivity.this, "注册成功，已自动登录", Toast.LENGTH_SHORT);
-        Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+        ToastUtil.showShort("注册成功，已自动登录");
+        Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
         startActivity(intent);
 
         finish();
     }
 
     public boolean validate() {
-        String mobile = etMoblie.getText().toString();
+        String mobile = etMobile.getText().toString();
         String password = etPassword.getText().toString();
         String reEnterPassword = etRePassword.getText().toString();
 
         if (mobile.isEmpty()) {
-            etMoblie.setError("请输入有效的手机号");
+            etMobile.setError("请输入有效的手机号");
             return false;
         } else {
-            etMoblie.setError(null);
+            etMobile.setError(null);
         }
 
         if (password.isEmpty()) {
@@ -155,13 +154,13 @@ public class SignupActivity extends BaseActivity {
 
         @Override
         public void onTick(long millisUntilFinished) {
-            btnGetcode.setText(millisUntilFinished / 1000 + "秒后可以重新获取");
+            btnGetCode.setText(millisUntilFinished / 1000 + "秒后可以重新获取");
         }
 
         @Override
         public void onFinish() {
-            btnGetcode.setText("获取验证码");
-            btnGetcode.setEnabled(true);
+            btnGetCode.setText("获取验证码");
+            btnGetCode.setEnabled(true);
         }
     };
 
@@ -169,22 +168,22 @@ public class SignupActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_getcode:
-                btnGetcode.setEnabled(false);
+                btnGetCode.setEnabled(false);
                 if (!validate()) {
-                    ToastUtil.show(this, "信息不完善！", Toast.LENGTH_SHORT);
-                    btnGetcode.setEnabled(true);
+                    ToastUtil.showShort("信息不完善！");
+                    btnGetCode.setEnabled(true);
                     return;
                 }
                 countDownTimer.start();
-                String mobile = etMoblie.getText().toString();
+                String mobile = etMobile.getText().toString();
                 IsSignUp(mobile);
 
                 break;
             case R.id.btn_signup:
-                signup();
+                signUp();
                 break;
             case R.id.tv_link_login:
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
@@ -206,7 +205,7 @@ public class SignupActivity extends BaseActivity {
                 if (e == null) {
                     if (object.size() != 0) {
                         LogUtils.e("非空" + tel + " 已经注册了");
-                        ToastUtil.show(SignupActivity.this, "这个手机号已经注册了", Toast.LENGTH_SHORT);
+                        ToastUtil.showShort("这个手机号已经注册了");
                     } else {
                         LogUtils.e(tel + "没有注册");
                         BmobSMS.requestSMSCode(tel, "keshi", new QueryListener<Integer>() {
@@ -214,16 +213,16 @@ public class SignupActivity extends BaseActivity {
                             public void done(Integer smsId, BmobException ex) {
                                 if (ex == null) {//验证码发送成功
                                     LogUtils.e("验证码发送成功,短信id：" + smsId);//用于查询本次短信发送详情
-                                    ToastUtil.show(SignupActivity.this, "验证码已发送，请注意查收", Toast.LENGTH_SHORT);
+                                    ToastUtil.showShort("验证码已发送，请注意查收");
                                 } else {
-                                    ToastUtil.show(SignupActivity.this, "验证码获取失败，请稍后重试", Toast.LENGTH_SHORT);
+                                    ToastUtil.showShort("验证码获取失败，请稍后重试");
                                 }
                             }
                         });
                     }
                 } else {
                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
-                    ToastUtil.show(SignupActivity.this, "验证码获取失败，请稍后重试", Toast.LENGTH_SHORT);
+                    ToastUtil.showShort("验证码获取失败，请稍后重试");
                 }
             }
         });

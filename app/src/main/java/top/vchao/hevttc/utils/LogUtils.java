@@ -2,13 +2,15 @@ package top.vchao.hevttc.utils;
 
 import android.util.Log;
 
+import top.vchao.hevttc.BuildConfig;
+
 /**
  * @ 创建时间: 2017/8/23 on 13:25.
  * @ 描述：log工具类
  * @ 作者: vchao
  */
 public class LogUtils {
-    static boolean islog = true;//    是否打印log
+    static boolean islog = BuildConfig.DEBUG;//    是否打印log
     static String className;//类名
     static String methodName;//方法名
     static int lineNumber;//行数

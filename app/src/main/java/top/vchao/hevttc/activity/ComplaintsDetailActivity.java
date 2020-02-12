@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -63,7 +62,7 @@ public class ComplaintsDetailActivity extends BaseActivity {
     public void onViewClicked() {
         String content = etCompContent.getText().toString().trim();
         if (TextUtils.isEmpty(content)) {
-            ToastUtil.showShort(ComplaintsDetailActivity.this, "请填写反馈信息！");
+            ToastUtil.showShort("请填写反馈信息！");
         } else {
             LoadDialog.show(ComplaintsDetailActivity.this, "反馈中……");
             Feedback bean = new Feedback();
@@ -75,13 +74,13 @@ public class ComplaintsDetailActivity extends BaseActivity {
                 @Override
                 public void done(String objectId, BmobException e) {
                     if (e == null) {
-                        ToastUtil.show(ComplaintsDetailActivity.this, "我们已经收到您的反馈！", Toast.LENGTH_SHORT);
+                        ToastUtil.showShort("我们已经收到您的反馈！");
                         LogUtils.e("已经收到您的反馈：" + objectId);
                         Intent intent = new Intent(ComplaintsDetailActivity.this, PushOKActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
-                        ToastUtil.show(ComplaintsDetailActivity.this, "反馈失败，请检查网络后重试！", Toast.LENGTH_SHORT);
+                        ToastUtil.showShort("反馈失败，请检查网络后重试！");
                         LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
                     }
 

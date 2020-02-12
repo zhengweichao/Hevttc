@@ -4,10 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
@@ -27,6 +25,7 @@ import top.vchao.hevttc.activity.UserInfoActivity;
 import top.vchao.hevttc.bean.MyUser;
 import top.vchao.hevttc.bean.UpdateJson;
 import top.vchao.hevttc.constant.MyUrl;
+import top.vchao.hevttc.utils.ToastUtil;
 import top.vchao.hevttc.view.LoadDialog;
 
 /**
@@ -42,9 +41,8 @@ public class TabMyFragment extends BaseFragment {
     TextView tvInfoState;
 
     @Override
-    protected View initView() {
-        View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_my, null);
-        return inflate;
+    public int getLayoutId() {
+        return R.layout.fragment_my;
     }
 
     @Override
@@ -60,11 +58,6 @@ public class TabMyFragment extends BaseFragment {
             tvInfoState.setText("未认证");
             tvInfoState.setBackgroundColor(getResources().getColor(R.color.gray));
         }
-
-    }
-
-    @Override
-    public void initListener() {
 
     }
 
@@ -97,9 +90,9 @@ public class TabMyFragment extends BaseFragment {
                             public void onSuccess(String s, Call call, Response response) {
                                 UpdateJson updateJson = new Gson().fromJson(s, UpdateJson.class);
                                 if ("200".equals(updateJson.getCode())) {
-                                    Toast.makeText(mActivity, "已经有更新了，请进行更新！", Toast.LENGTH_SHORT).show();
+                                    ToastUtil.showShort("已经有更新了，请进行更新！");
                                 } else {
-                                    Toast.makeText(mActivity, "已经是最新版本！", Toast.LENGTH_SHORT).show();
+                                    ToastUtil.showShort("已经是最新版本！");
                                 }
                                 LoadDialog.dismiss(mActivity);
                             }

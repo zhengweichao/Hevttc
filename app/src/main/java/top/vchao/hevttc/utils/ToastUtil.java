@@ -1,9 +1,15 @@
 package top.vchao.hevttc.utils;
 
 import android.content.Context;
+import android.os.Looper;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import io.github.zhitaocai.toastcompat.ToastCompat;
+import top.vchao.hevttc.MyApplication;
+import top.vchao.hevttc.R;
 
 /**
  * @ 创建时间: 2017/10/2 on 8:29.
@@ -17,83 +23,56 @@ public class ToastUtil {
     /**
      * 短时间显示  Toast
      *
-     * @param context
-     * @param sequence
+     * @param message 吐司内容
      */
-    public static void showShort(Context context, CharSequence sequence) {
-
-        if (toast == null) {
-            toast = Toast.makeText(context, sequence, Toast.LENGTH_SHORT);
-        } else {
-            toast.setText(sequence);
-        }
-        toast.show();
-
+    public static void showShort(CharSequence message) {
+        show(message, Toast.LENGTH_SHORT);
     }
 
-    /**
-     * 短时间显示Toast
-     *
-     * @param context
-     * @param message
-     */
-    public static void showShort(Context context, int message) {
-        if (null == toast) {
-            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-            // toast.setGravity(Gravity.CENTER, 0, 0);
-        } else {
-            toast.setText(message);
-        }
-        toast.show();
-    }
 
     /**
      * 长时间显示Toast
      *
-     * @param context
-     * @param message
+     * @param message 吐司内容
      */
-    public static void showLong(Context context, CharSequence message) {
-        if (null == toast) {
-            toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
-            // toast.setGravity(Gravity.CENTER, 0, 0);
-        } else {
-            toast.setText(message);
-        }
-        toast.show();
+    public static void showLong(CharSequence message) {
+        show(message, Toast.LENGTH_LONG);
     }
 
-    /**
-     * 长时间显示Toast
-     *
-     * @param context
-     * @param message
-     */
-    public static void showLong(Context context, int message) {
-        if (null == toast) {
-            toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
-            //    toast.setGravity(Gravity.CENTER, 0, 0);
-        } else {
-            toast.setText(message);
-        }
-        toast.show();
-    }
 
     /**
      * 自定义显示时间
      *
-     * @param context
-     * @param sequence
-     * @param duration
+     * @param sequence 吐司内容
+     * @param duration 吐司时长
      */
-    public static void show(Context context, String sequence, int duration) {
-        ToastCompat.makeText(context, sequence, duration).show();
-        /*if (toast == null) {
-        } else {
-            toast.setText(sequence);
+    public static void show(CharSequence sequence, int duration) {
+        try {
+            LogUtils.e("  吐司：  " + sequence);
+            if (toast == null) {
+                toast = new Toast(MyApplication.INSTANCE());
+            }
+            toast.setGravity(Gravity.BOTTOM, 0, 120);
+            View v = LayoutInflater.from(MyApplication.INSTANCE()).inflate(R.layout.base_toast_layout, null);
+            TextView tv2 = (TextView) v.findViewById(R.id.tv_toast);
+            tv2.setText(sequence);
+            toast.setView(v);
+            toast.setDuration(duration);
+            toast.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                Looper.prepare();
+                Toast.makeText(MyApplication.INSTANCE(), sequence, duration).show();
+                Looper.loop();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
         }
-        toast.show();*/
+    }
 
+    public static void show(Context context, CharSequence sequence, int duration) {
+        show(sequence, duration);
     }
 
     /**

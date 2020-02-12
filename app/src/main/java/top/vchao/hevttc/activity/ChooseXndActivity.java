@@ -18,7 +18,7 @@ import top.vchao.hevttc.adapter.XndAdapter;
 import top.vchao.hevttc.jw.service.BroadcastAction;
 import top.vchao.hevttc.utils.SPUtils;
 
-public class ChooseXndActivity extends BaseActivity0 {
+public class ChooseXndActivity extends BaseAppCompatActivity {
 
     private Toolbar mToolbar;
     private ListView mXndListView;

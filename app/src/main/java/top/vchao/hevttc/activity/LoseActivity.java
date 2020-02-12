@@ -1,50 +1,48 @@
 package top.vchao.hevttc.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.hugeterry.coordinatortablayout.CoordinatorTabLayout;
 import top.vchao.hevttc.R;
+import top.vchao.hevttc.constant.Config;
 import top.vchao.hevttc.cootab.MyPagerAdapter;
-import top.vchao.hevttc.fragment.LoseFragment1;
-import top.vchao.hevttc.fragment.LoseFragment2;
+import top.vchao.hevttc.fragment.FindLoserFragment;
+import top.vchao.hevttc.fragment.FindThingFragment;
 
 /**
  * @ 创建时间: 2017/10/3 on 10:03.
- * @ 描述：失物招领页面
+ * @ 描述：失物招领 + 寻物启事 页面
  * @ 作者: vchao
  */
-public class LoseActivity extends AppCompatActivity {
+public class LoseActivity extends BaseAppCompatActivity {
     @BindView(R.id.coordinatortablayout)
     CoordinatorTabLayout mCoordinatorTabLayout;
     @BindView(R.id.vp)
     ViewPager mViewPager;
-    private int[] mImageArray, mColorArray;
-    private final String[] mTitles = {"失物招领", "寻物启事"};
+
+    private final String[] mTitles = {Config.MODULE_NAME_LOSE, Config.MODULE_NAME_FIND};
     private ArrayList<Fragment> mFragments;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lose);
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.activity_lose;
+    }
 
+    @Override
+    void initView() {
         initFragments();
         initViewPager();
 
-        mImageArray = new int[]{
+        int[] mImageArray = new int[]{
                 R.mipmap.img_bg_lose,
                 R.mipmap.img_bg_find};
-        mColorArray = new int[]{
+        int[] mColorArray = new int[]{
                 android.R.color.holo_blue_light,
                 android.R.color.holo_red_light};
 
@@ -62,18 +60,8 @@ public class LoseActivity extends AppCompatActivity {
 
     private void initFragments() {
         mFragments = new ArrayList<>();
-        mFragments.add(LoseFragment1.getInstance(mTitles[0]));
-        mFragments.add(LoseFragment2.getInstance(mTitles[1]));
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+        mFragments.add(new FindLoserFragment());
+        mFragments.add(new FindThingFragment());
     }
 
     @OnClick(R.id.iv_add_lose)

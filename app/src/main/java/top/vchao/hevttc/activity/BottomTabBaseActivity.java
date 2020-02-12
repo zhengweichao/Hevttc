@@ -1,18 +1,14 @@
 package top.vchao.hevttc.activity;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 
 import java.util.List;
 
+import butterknife.BindView;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.utils.LightStatusBarUtils;
 import top.vchao.hevttc.view.BottomTabView;
@@ -22,23 +18,23 @@ import top.vchao.hevttc.view.BottomTabView;
  * @ 描述：底部标签页面基类
  * @ 作者: vchao
  */
-public abstract class BottomTabBaseActivity extends AppCompatActivity {
+public abstract class BottomTabBaseActivity extends BaseAppCompatActivity {
 
+    @BindView(R.id.viewPager)
     ViewPager viewPager;
+    @BindView(R.id.bottomTabView)
     BottomTabView bottomTabView;
+
     FragmentPagerAdapter adapter;
 
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int getLayoutId() {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        return R.layout.activity_base_bottom_tab;
+    }
 
-        setContentView(R.layout.activity_base_bottom_tab);
-
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        bottomTabView = (BottomTabView) findViewById(R.id.bottomTabView);
-
+    @Override
+    void initView() {
         adapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -58,11 +54,10 @@ public abstract class BottomTabBaseActivity extends AppCompatActivity {
         }
 
         bottomTabView.setUpWithViewPager(viewPager);
-        initListener();
-
     }
 
-    private void initListener() {
+    @Override
+    public void initListener() {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

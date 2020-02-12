@@ -33,8 +33,13 @@ public class AnswerFragment extends BaseFragment implements RadioGroup.OnChecked
     }
 
     @Override
-    protected View initView() {
-        View view = View.inflate(mActivity, R.layout.fragment_quest, null);
+    public int getLayoutId() {
+        return R.layout.fragment_quest;
+    }
+
+    @Override
+    protected void initView() {
+        View view = mView;
         tv_title = (TextView) view.findViewById(R.id._tv_title);
         rg_base = (RadioGroup) view.findViewById(R.id._rg_base);
         LogUtils.e("initView: " + questBean.getQ_type());
@@ -68,7 +73,6 @@ public class AnswerFragment extends BaseFragment implements RadioGroup.OnChecked
             rg_base.setVisibility(View.GONE);
         }
 
-        return view;
     }
 
     @Override

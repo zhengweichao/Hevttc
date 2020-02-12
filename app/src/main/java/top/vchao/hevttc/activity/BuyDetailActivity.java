@@ -17,6 +17,9 @@ import top.vchao.hevttc.bean.BuyItem;
 import top.vchao.hevttc.bean.SaleItem;
 import top.vchao.hevttc.utils.LogUtils;
 
+/**
+ * 二手交易详情页面
+ */
 public class BuyDetailActivity extends BaseActivity {
 
     @BindView(R.id.tv_detail_buy_title)
@@ -35,6 +38,7 @@ public class BuyDetailActivity extends BaseActivity {
     ImageView ivBuyDetail;
     @BindView(R.id.bt_detail_buy_tel)
     Button btDetailBuyTel;
+
     private BuyItem Buybean;
     private SaleItem salebean;
 

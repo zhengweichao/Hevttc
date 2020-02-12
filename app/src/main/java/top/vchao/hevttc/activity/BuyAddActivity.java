@@ -5,7 +5,6 @@ import android.os.Environment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -145,14 +144,14 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
                             @Override
                             public void done(String objectId, BmobException e) {
                                 if (e == null) {
-                                    ToastUtil.show(BuyAddActivity.this, "发布成功", Toast.LENGTH_SHORT);
+                                    ToastUtil.showShort("发布成功");
                                     LogUtils.e("创建数据成功：" + objectId);
                                     LoadDialog.dismiss(BuyAddActivity.this);
                                     startActivity(new Intent(BuyAddActivity.this, BuyActivity.class));
                                     finish();
                                 } else {
                                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
-                                    ToastUtil.show(BuyAddActivity.this, "发布失败，请稍后再试", Toast.LENGTH_SHORT);
+                                    ToastUtil.showShort("发布失败，请稍后再试");
                                     LoadDialog.dismiss(BuyAddActivity.this);
                                 }
                             }
@@ -170,14 +169,14 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
                             @Override
                             public void done(String objectId, BmobException e) {
                                 if (e == null) {
-                                    ToastUtil.show(BuyAddActivity.this, "发布成功", Toast.LENGTH_SHORT);
+                                    ToastUtil.showShort("发布成功");
                                     LogUtils.e("创建数据成功：" + objectId);
                                     LoadDialog.dismiss(BuyAddActivity.this);
                                     startActivity(new Intent(BuyAddActivity.this, BuyActivity.class));
                                     finish();
                                 } else {
                                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
-                                    ToastUtil.show(BuyAddActivity.this, "发布失败，请稍后再试", Toast.LENGTH_SHORT);
+                                    ToastUtil.showShort("发布失败，请稍后再试");
                                     LoadDialog.dismiss(BuyAddActivity.this);
                                 }
                             }
@@ -188,15 +187,12 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
                 @Override
                 public void onError(int statuscode, String errormsg) {
                     LogUtils.e("错误码" + statuscode + ",错误描述：" + errormsg);
-                    Toast.makeText(BuyAddActivity.this, "发生错误，请稍后重试", Toast.LENGTH_SHORT).show();
-                    // TODO Auto-generated method stub
+                    ToastUtil.showShort("发生错误，请稍后重试");
                     LoadDialog.dismiss(BuyAddActivity.this);
                 }
 
                 @Override
                 public void onProgress(int curIndex, int curPercent, int total, int totalPercent) {
-                    Log.i("life", "insertBatchDatasWithOne -onProgress :" + curIndex + "---" + curPercent + "---" + total + "----" + totalPercent);
-                    // TODO Auto-generated method stub
                     LoadDialog.dismiss(BuyAddActivity.this);
                 }
             });
@@ -213,14 +209,14 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
                     @Override
                     public void done(String objectId, BmobException e) {
                         if (e == null) {
-                            ToastUtil.show(BuyAddActivity.this, "发布成功", Toast.LENGTH_SHORT);
+                            ToastUtil.showShort("发布成功");
                             LogUtils.e("创建数据成功：" + objectId);
                             LoadDialog.dismiss(BuyAddActivity.this);
                             startActivity(new Intent(BuyAddActivity.this, BuyActivity.class));
                             finish();
                         } else {
                             LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
-                            ToastUtil.show(BuyAddActivity.this, "发布失败，请稍后再试", Toast.LENGTH_SHORT);
+                            ToastUtil.showShort("发布失败，请稍后再试");
                             LoadDialog.dismiss(BuyAddActivity.this);
                         }
                     }
@@ -237,14 +233,14 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
                     @Override
                     public void done(String objectId, BmobException e) {
                         if (e == null) {
-                            ToastUtil.show(BuyAddActivity.this, "发布成功", Toast.LENGTH_SHORT);
+                            ToastUtil.showShort("发布成功");
                             LogUtils.e("创建数据成功：" + objectId);
                             LoadDialog.dismiss(BuyAddActivity.this);
                             startActivity(new Intent(BuyAddActivity.this, BuyActivity.class));
                             finish();
                         } else {
                             LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
-                            ToastUtil.show(BuyAddActivity.this, "发布失败，请稍后再试", Toast.LENGTH_SHORT);
+                            ToastUtil.showShort("发布失败，请稍后再试");
                             LoadDialog.dismiss(BuyAddActivity.this);
                         }
                     }
@@ -296,7 +292,7 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
 
                     @Override
                     public void onError(Throwable e) {
-                        // TODO 当压缩过程出现问题时调用
+                        // 当压缩过程出现问题时调用
                         LoadDialog.dismiss(BuyAddActivity.this);
                         Toast.makeText(BuyAddActivity.this, "压缩失败！", Toast.LENGTH_SHORT).show();
                     }
@@ -380,7 +376,6 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
             //添加图片返回
             if (data != null && requestCode == REQUEST_CODE_SELECT) {
                 images = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
-                String path = images.get(0).path;
                 if (images != null) {
                     selImageList.addAll(images);
                     adapter.setImages(selImageList);

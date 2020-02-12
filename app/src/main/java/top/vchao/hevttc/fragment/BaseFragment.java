@@ -1,9 +1,9 @@
 package top.vchao.hevttc.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +18,10 @@ import butterknife.Unbinder;
  */
 public abstract class BaseFragment extends Fragment {
 
-    public FragmentActivity mActivity;
+    public Activity mActivity;
+    protected boolean isVisible; // Fragment当前状态是否可见
+    protected View mView;
+
     Unbinder unbinder;
 
     @Override
@@ -30,13 +33,29 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public final View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = initView();
-        unbinder = ButterKnife.bind(this, view);
-        return view;
+        getPreIntent();
+        if (mView == null) {
+            mView = View.inflate(mActivity, getLayoutId(), null);
+        }
+        unbinder = ButterKnife.bind(this, mView);
+        initView();
+        return mView;
+    }
+
+    /**
+     * @return 布局文件id
+     */
+    public abstract int getLayoutId();
+
+    /**
+     * 获取 上一个页面 传的数据
+     */
+    public void getPreIntent() {
     }
 
     //view的初始化
-    protected abstract View initView();
+    protected void initView() {
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -48,17 +67,55 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 初始化数据
      */
-    public abstract void initData();
+    public void initData() {
+    }
 
     /**
      * 初始化监听器
      */
-    public abstract void initListener();
+    public void initListener() {
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+        if (getUserVisibleHint()) {
+            isVisible = true;
+            onVisible();
+        } else {
+            isVisible = false;
+            onInvisible();
+        }
+    }
+
+    /**
+     * 可见
+     */
+    protected void onVisible() {
+        lazyLoad();
+    }
+
+    /**
+     * 不可见
+     */
+    protected void onInvisible() {
+    }
+
+    /**
+     * 延迟加载
+     */
+    protected void lazyLoad() {
+    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+        try {
+            unbinder.unbind();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

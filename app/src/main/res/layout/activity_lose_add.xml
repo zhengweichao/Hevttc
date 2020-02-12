@@ -22,8 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -41,6 +41,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
                 android:paddingTop="10dp">
@@ -55,6 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_drop_down_normal"
+                    android:minWidth="30dp"
                     android:spinnerMode="dialog" />
 
                 <TextView
@@ -72,6 +74,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_drop_down_normal"
                     android:gravity="right"
+                    android:minWidth="20dp"
                     android:spinnerMode="dialog" />
 
                 <TextView
@@ -88,6 +91,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_drop_down_normal"
                     android:gravity="right"
+                    android:minWidth="20dp"
                     android:spinnerMode="dialog" />
 
                 <TextView
@@ -104,8 +108,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/et_bg"
                 android:orientation="horizontal">
 
@@ -140,10 +144,10 @@
                     android:layout_margin="6dp"
                     android:layout_weight="10"
                     android:background="@null"
-                    android:textSize="16sp"
-                    android:lines="3"
                     android:gravity="start"
-                    android:hint="请详细描述物品特征哦！" />
+                    android:hint="请详细描述物品特征哦！"
+                    android:lines="3"
+                    android:textSize="16sp" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_lose_add_pic"
@@ -157,6 +161,7 @@
                     android:scrollbarStyle="outsideOverlay"
                     app:layoutManager="android.support.v7.widget.GridLayoutManager"
                     app:spanCount="3"
+                    tools:itemCount="1"
                     tools:listitem="@layout/list_item_image" />
             </LinearLayout>
 
@@ -164,8 +169,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/et_bg"
                 android:orientation="horizontal">
 

@@ -81,6 +81,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/select_button"
                 android:padding="5dp"
+                android:textColor="@color/white"
                 android:text="拨打电话"
                 android:textSize="16sp" />
 

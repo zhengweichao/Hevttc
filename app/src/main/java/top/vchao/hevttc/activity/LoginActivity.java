@@ -70,7 +70,7 @@ public class LoginActivity extends BaseActivity {
                 login();
                 break;
             case R.id.tv_link_signup:
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
                 finish();
                 //动画效果

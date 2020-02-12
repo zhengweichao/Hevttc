@@ -54,7 +54,7 @@ public class LoseDetailActivity extends BaseActivity {
             tvDetailLoseAuthor.setText(losebean.getAuthor());
             tvDetailLoseTime.setText(losebean.getTime());
             tvDetailLoseDesc.setText(losebean.getContent());
-            tvDetailFoodsTel.setText(losebean.getTel());
+            tvDetailFoodsTel.setText("联系方式: " + losebean.getTel());
 
             if (losebean.getPic() != null) {
                 ivLoseDetail.setVisibility(View.VISIBLE);
@@ -70,7 +70,7 @@ public class LoseDetailActivity extends BaseActivity {
             tvDetailLoseAuthor.setText(findbean.getAuthor());
             tvDetailLoseTime.setText(findbean.getTime());
             tvDetailLoseDesc.setText(findbean.getContent());
-            tvDetailFoodsTel.setText(findbean.getTel());
+            tvDetailFoodsTel.setText("联系方式: " + findbean.getTel());
 
             if (findbean.getPic() != null) {
                 ivLoseDetail.setVisibility(View.VISIBLE);

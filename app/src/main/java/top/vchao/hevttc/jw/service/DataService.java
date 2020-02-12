@@ -30,7 +30,7 @@ import top.vchao.hevttc.jw.bean.CourseTable;
 import top.vchao.hevttc.jw.bean.ScoreTable;
 import top.vchao.hevttc.jw.bean.StuSimpleInfo;
 import top.vchao.hevttc.jw.bean.User;
-import top.vchao.hevttc.jw.constant.Constant;
+import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.jw.dao.OkHttpDAO;
 import top.vchao.hevttc.jw.tool.HtmlTools;
 

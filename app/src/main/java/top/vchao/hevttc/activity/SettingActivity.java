@@ -20,7 +20,7 @@ import top.vchao.hevttc.utils.SPUtils;
 /**
  * 设置界面
  */
-public class SettingActivity extends BaseActivity0 {
+public class SettingActivity extends BaseAppCompatActivity {
 
     private Toolbar mToolbar;
     private TextView mCurrWeekView;

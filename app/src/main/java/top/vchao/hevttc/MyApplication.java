@@ -19,6 +19,7 @@ import java.io.FileReader;
 import cn.bmob.v3.Bmob;
 import top.vchao.hevttc.bean.DaoMaster;
 import top.vchao.hevttc.bean.DaoSession;
+import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.utils.LogUtils;
 
 /**
@@ -114,13 +115,13 @@ public class MyApplication extends Application {
         super.onCreate();
 
         initOKGO();
-        if (getApplicationInfo().packageName.equals(getMyProcessName())) {
-//            BmobIM.init(this);
-//            BmobIM.registerDefaultMessageHandler(new DemoMessageHandler());
-        }
-        Bmob.initialize(this, "7de3a2c669418b3957557a6f519afc3e");
+
+        //Bmob初始化
+        Bmob.initialize(this, Constant.BMOB_APP_KEY);
+
         //配置数据库
 //        setupDatabase();
+
         ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this)
                 .setDownsampleEnabled(true)
                 .build();

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="top.vchao.hevttc.activity.buyDetailActivity">
+    tools:context="top.vchao.hevttc.activity.BuyDetailActivity">
 
     <include layout="@layout/layout_title_bar_back" />
 
@@ -64,8 +64,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:text="因为大四毕业了，所以出一个小镜子，只需要10块钱哦！"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="因为大四毕业了，所以出一个小镜子，只需要10块钱哦！" />
 
 
             <TextView
@@ -73,26 +73,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:text="联系方式：13791516886"
+                tools:text="联系方式：13791516886"
                 android:textSize="16sp" />
 
             <ImageView
-                android:visibility="gone"
                 android:id="@+id/iv_buy_detail"
                 android:layout_width="360dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_height="wrap_content" />
+                android:visibility="gone" />
 
             <Button
-                android:layout_marginTop="20dp"
                 android:id="@+id/bt_detail_buy_tel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/select_button"
                 android:padding="5dp"
                 android:text="拨打电话"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </LinearLayout>

@@ -2,11 +2,10 @@ package top.vchao.hevttc.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import cn.hugeterry.coordinatortablayout.CoordinatorTabLayout;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.cootab.MainFragment1;
@@ -21,18 +20,20 @@ import top.vchao.hevttc.cootab.MyPagerAdapter;
  * @ 作者: vchao
  */
 public class TabNewsFragment extends BaseFragment {
-    private CoordinatorTabLayout mCoordinatorTabLayout;
+
+    @BindView(R.id.vp_news)
+    ViewPager mViewPager;
+    @BindView(R.id.cootablayout_news)
+    CoordinatorTabLayout mCoordinatorTabLayout;
+
     private int[] mImageArray, mColorArray;
-    private ViewPager mViewPager;
+
     private final String[] mTitles = {"通知公告", "新闻速递", "自媒体", "校园文化"};
     private ArrayList<Fragment> mFragments;
 
     @Override
-    protected View initView() {
-        View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_news, null);
-        mViewPager = (ViewPager) inflate.findViewById(R.id.vp_news);
-        mCoordinatorTabLayout = (CoordinatorTabLayout) inflate.findViewById(R.id.cootablayout_news);
-        return inflate;
+    public int getLayoutId() {
+        return R.layout.fragment_news;
     }
 
     @Override
@@ -56,11 +57,6 @@ public class TabNewsFragment extends BaseFragment {
                 .setTitle("")
                 .setImageArray(mImageArray, mColorArray)
                 .setupWithViewPager(mViewPager);
-    }
-
-    @Override
-    public void initListener() {
-
     }
 
     private void initViewPager() {

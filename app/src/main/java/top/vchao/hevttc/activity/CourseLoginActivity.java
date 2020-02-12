@@ -32,7 +32,7 @@ import java.util.Calendar;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.jw.bean.CourseTable;
 import top.vchao.hevttc.jw.bean.User;
-import top.vchao.hevttc.jw.constant.Constant;
+import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.jw.factor.BeanFactor;
 import top.vchao.hevttc.jw.service.BroadcastAction;
 import top.vchao.hevttc.jw.service.DataService;
@@ -45,7 +45,7 @@ import top.vchao.hevttc.utils.SPUtils;
  * 登录界面
  * Created by FatCat on 2016/10/2.
  */
-public class CourseLoginActivity extends BaseActivity0 {
+public class CourseLoginActivity extends BaseAppCompatActivity {
 
     private Toolbar mToolbar;
 

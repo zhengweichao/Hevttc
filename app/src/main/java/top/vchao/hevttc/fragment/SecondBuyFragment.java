@@ -1,22 +1,17 @@
 package top.vchao.hevttc.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
@@ -30,51 +25,38 @@ import xyz.zpayh.adapter.OnItemClickListener;
 
 /**
  * @ 创建时间: 2017/9/14 on 14:20.
- * @ 描述：二手交易 卖
+ * @ 描述：二手交易 【淘点宝贝】
+ *     用户想要买二手物品， 展示卖的条目列表
  * @ 作者: vchao
  */
-public class BuyFragment1 extends Fragment {
-    private RecyclerView mRecyclerView;
+public class SecondBuyFragment extends BaseFragment {
+    @BindView(R.id.recyclerview)
+    RecyclerView mRecyclerView;
+    @BindView(R.id.spl_main_news)
+    SwipeRefreshLayout splMainNews;
 
-    private static final String ARG_TITLE = "title";
-    private String mTitle;
     private NNNAdapter mAdapter;
-    private SwipeRefreshLayout splMainNews;
     private ArrayList<SaleItem> saleBeen;
 
-    public static BuyFragment1 getInstance(String title) {
-        BuyFragment1 fra = new BuyFragment1();
-        Bundle bundle = new Bundle();
-        bundle.putString(ARG_TITLE, title);
-        fra.setArguments(bundle);
-        return fra;
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_main;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Bundle bundle = getArguments();
-        mTitle = bundle.getString(ARG_TITLE);
+    protected void initView() {
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
-        mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerview);
-        splMainNews = (SwipeRefreshLayout) v.findViewById(R.id.spl_main_news);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-        initData();
-        return v;
-    }
-
-    protected void initData() {
+    public void initData() {
         mAdapter = new NNNAdapter();
         saleBeen = new ArrayList<>();
 
         BmobQuery<SaleItem> query = new BmobQuery<SaleItem>();
         query.order("-createdAt");
-        //返回6条数据，如果不加上这条语句，默认返回10条数据
-        query.setLimit(15);
+        //返回10条数据
+        query.setLimit(10);
         //执行查询方法
         query.findObjects(new FindListener<SaleItem>() {
             @Override
@@ -96,12 +78,7 @@ public class BuyFragment1 extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initListener();
-    }
-
-    private void initListener() {
+    public void initListener() {
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {
@@ -114,17 +91,19 @@ public class BuyFragment1 extends Fragment {
         splMainNews.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+//                TODO 网络请求数据（现在是假刷新）
+
+//                1.5秒 后停止刷新操作
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         SystemClock.sleep(1500);
-                        //停止刷新操作，
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //停止刷新操作
+                                // 停止刷新操作
                                 splMainNews.setRefreshing(false);
-                                ToastUtil.show(getActivity(), "没有更多数据了！", Toast.LENGTH_SHORT);
+                                ToastUtil.showShort("没有更多数据了！");
                             }
                         });
                     }
@@ -132,7 +111,6 @@ public class BuyFragment1 extends Fragment {
 
             }
         });
-
 
     }
 

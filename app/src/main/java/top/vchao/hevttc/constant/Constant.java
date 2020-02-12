@@ -1,4 +1,4 @@
-package top.vchao.hevttc.jw.constant;
+package top.vchao.hevttc.constant;
 
 /**
  * 常量类
@@ -73,5 +73,8 @@ public class Constant {
      * 取数据的key，成绩表
      */
     public static final String SCORE_TABLE = "scoreTable";
+
+
+    public static final String BMOB_APP_KEY = "7de3a2c669418b3957557a6f519afc3e";
 
 }

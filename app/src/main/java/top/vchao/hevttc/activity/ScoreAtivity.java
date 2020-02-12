@@ -12,14 +12,14 @@ import top.vchao.hevttc.R;
 import top.vchao.hevttc.adapter.ScoreAdapter;
 import top.vchao.hevttc.jw.bean.CourseScore;
 import top.vchao.hevttc.jw.bean.ScoreTable;
-import top.vchao.hevttc.jw.constant.Constant;
+import top.vchao.hevttc.constant.Constant;
 
 /**
  * 成绩表界面
  * Created by EsauLu on 2016-10-07.
  */
 
-public class ScoreAtivity extends BaseActivity0 {
+public class ScoreAtivity extends BaseAppCompatActivity {
 
     private Toolbar mToolbar;
     private ListView mScoreList;

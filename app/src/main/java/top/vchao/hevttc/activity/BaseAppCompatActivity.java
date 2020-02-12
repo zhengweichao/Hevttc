@@ -18,7 +18,7 @@ import top.vchao.hevttc.utils.LogUtils;
  * @ 描述：Activity基类
  * @ 作者: vchao
  */
-public abstract class BaseActivity0 extends AppCompatActivity {
+public abstract class BaseAppCompatActivity extends AppCompatActivity {
 
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
