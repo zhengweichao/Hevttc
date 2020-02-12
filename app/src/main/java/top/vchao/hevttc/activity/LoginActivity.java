@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.stephentuso.welcome.WelcomeHelper;
 
@@ -19,6 +18,7 @@ import cn.bmob.v3.listener.LogInListener;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.bean.MyUser;
 import top.vchao.hevttc.constant.Config;
+import top.vchao.hevttc.utils.LogUtils;
 import top.vchao.hevttc.utils.ToastUtil;
 
 /**
@@ -63,7 +63,8 @@ public class LoginActivity extends BaseActivity {
             case R.id.btn_login:
                 //如果内容不合法，则直接返回，显示错误。
                 if (!validate()) {
-                    onLoginFailed();
+                    LogUtils.e("输入内容格式不合法");
+                    ToastUtil.showShort("请输入合法的账号密码信息！");
                     return;
                 }
                 login();
@@ -101,7 +102,7 @@ public class LoginActivity extends BaseActivity {
                     progressDialog.dismiss();
                 } else {
 //                  登录失败
-                    onLoginFailed();
+                    onLoginFailed(e.getMessage());
                     progressDialog.dismiss();
                 }
             }
@@ -140,8 +141,8 @@ public class LoginActivity extends BaseActivity {
     /**
      * 登录失败
      */
-    public void onLoginFailed() {
-        ToastUtil.show(getBaseContext(), "登录失败", Toast.LENGTH_LONG);
+    public void onLoginFailed(String errorTip) {
+        ToastUtil.showLong("登录失败 " + errorTip);
         btnLogin.setEnabled(true);
     }
 

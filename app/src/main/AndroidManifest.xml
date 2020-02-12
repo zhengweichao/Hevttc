@@ -35,6 +35,7 @@
         android:roundIcon="@mipmap/ic_app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <uses-library
             android:name="org.apache.http.legacy"
@@ -98,7 +99,7 @@
         <activity android:name="top.vchao.hevttc.activity.CourseActivity0" />
         <activity android:name="top.vchao.hevttc.activity.CourseActivity" />
         <activity android:name="top.vchao.hevttc.activity.PhotoSchoolActivity" />
-        <activity android:name="top.vchao.hevttc.activity.WeatherActivity"></activity>
+        <activity android:name="top.vchao.hevttc.activity.WeatherActivity" />
 
 
         <activity android:name="top.vchao.hevttc.activity.CourseLoginActivity" />

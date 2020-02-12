@@ -85,7 +85,6 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
     public static final int REQUEST_CODE_PREVIEW = 101;
     String[] filePaths = new String[1];
     private ImagePickerAdapter adapter;
-    private long longtime;
     private String timeString;
     private String loseDesc;
     private String loseTel;
@@ -103,8 +102,7 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
         if (!TextUtils.isEmpty(user.getMobilePhoneNumber())) {
             etLoseTel.setText(user.getMobilePhoneNumber());
         }
-        longtime = System.currentTimeMillis();
-        timeString = TimeUtil.getTime(longtime, TimeUtil.DATE_FORMAT_MIN);
+        timeString = TimeUtil.getTime(System.currentTimeMillis(), TimeUtil.DATE_FORMAT_MIN);
         LogUtils.e("当前日期：" + timeString);
         initImagePicker();
         initSpnYear();
@@ -175,7 +173,7 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
 
                     @Override
                     public void onError(Throwable e) {
-                        // TODO 当压缩过程出现问题时调用
+                        // 当压缩过程出现问题时调用
                         LoadDialog.dismiss(LoseAddActivity.this);
                         Toast.makeText(LoseAddActivity.this, "压缩失败！", Toast.LENGTH_SHORT).show();
                     }
@@ -427,21 +425,15 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
         //数据
         List<Integer> dataList;
         dataList = new ArrayList<Integer>();
-        for (int i = 2016; i <= 2018; i++) {
+        for (int i = (getYear() - 2); i <= getYear(); i++) {
             dataList.add(i);
         }
         //适配器
         arr_adapter = new ArrayAdapter<Integer>(this, R.layout.layout_spinner_item, dataList);
         arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnYear.setAdapter(arr_adapter);
-        //设置默认值
-        for (int i = 0; i <= 100; i++) {
-            if (2016 + i == getYear()) {
-                Log.e("zwc", "initSpnYear: " + 2016 + i);
-                spnYear.setSelection(i, true);
-                break;
-            }
-        }
+        //设置默认值 (默认选择今年)
+        spnYear.setSelection(2, true);
     }
 
     private void initSpnMonth() {
@@ -457,12 +449,8 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
         arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //加载适配器
         spnMonth.setAdapter(arr_adapter);
-        for (int i = 0; i <= 100; i++) {
-            if (i + 1 == getMonth()) {
-                spnMonth.setSelection(i, true);
-                break;
-            }
-        }
+        // 默认选择本月
+        spnMonth.setSelection(getMonth() - 1, true);
     }
 
     private ArrayAdapter<Integer> arr_adapter;
@@ -478,12 +466,8 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
         arr_adapter = new ArrayAdapter<Integer>(this, R.layout.layout_spinner_item, dataList);
         arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnDay.setAdapter(arr_adapter);
-        for (int i = 0; i <= 50; i++) {
-            if (i + 1 == getDay()) {
-                spnDay.setSelection(i, true);
-                break;
-            }
-        }
+        // 默认选择今天
+        spnDay.setSelection(getDay() - 1, true);
     }
 
     public int getYear() {
