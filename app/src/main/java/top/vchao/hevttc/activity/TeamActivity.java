@@ -14,7 +14,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.adapter.NNNAdapter;
+import top.vchao.hevttc.adapter.GeneralAdapter;
 import top.vchao.hevttc.bean.TeamBean;
 import top.vchao.hevttc.utils.LogUtils;
 import xyz.zpayh.adapter.OnItemClickListener;
@@ -28,7 +28,7 @@ public class TeamActivity extends BaseActivity {
 
     @BindView(R.id.rv_team)
     RecyclerView rvTeam;
-    private NNNAdapter mAdapter;
+    private GeneralAdapter mAdapter;
     private ArrayList<TeamBean> teamBeen;
 
     @Override
@@ -37,8 +37,13 @@ public class TeamActivity extends BaseActivity {
     }
 
     @Override
+    void initView() {
+        initTitleBar("社团组织");
+    }
+
+    @Override
     void initData() {
-        mAdapter = new NNNAdapter();
+        mAdapter = new GeneralAdapter();
         teamBeen = new ArrayList<>();
         rvTeam.setLayoutManager(new LinearLayoutManager(TeamActivity.this));
 
@@ -50,9 +55,7 @@ public class TeamActivity extends BaseActivity {
             public void done(List<TeamBean> object, BmobException e) {
                 if (e == null) {
                     LogUtils.e("查询成功：共" + object.size() + "条数据。");
-                    for (TeamBean teamBean : object) {
-                        teamBeen.add(teamBean);
-                    }
+                    teamBeen.addAll(object);
                     mAdapter.setData(teamBeen);
                 } else {
                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());

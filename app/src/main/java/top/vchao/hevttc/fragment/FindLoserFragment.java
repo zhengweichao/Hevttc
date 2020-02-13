@@ -17,7 +17,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.activity.LoseDetailActivity;
-import top.vchao.hevttc.adapter.NNNAdapter;
+import top.vchao.hevttc.adapter.GeneralAdapter;
 import top.vchao.hevttc.bean.LoseItem;
 import top.vchao.hevttc.utils.LogUtils;
 import top.vchao.hevttc.utils.ToastUtil;
@@ -36,7 +36,7 @@ public class FindLoserFragment extends BaseFragment {
     @BindView(R.id.spl_main_news)
     SwipeRefreshLayout splMainNews;
 
-    private NNNAdapter LoseAdapter;
+    private GeneralAdapter LoseAdapter;
     private ArrayList<LoseItem> LoseBeen;
 
     @Override
@@ -51,7 +51,7 @@ public class FindLoserFragment extends BaseFragment {
 
     @Override
     public void initData() {
-        LoseAdapter = new NNNAdapter();
+        LoseAdapter = new GeneralAdapter();
         LoseBeen = new ArrayList<>();
 
         BmobQuery<LoseItem> query = new BmobQuery<LoseItem>();

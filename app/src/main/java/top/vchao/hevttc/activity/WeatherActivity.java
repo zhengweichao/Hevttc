@@ -82,7 +82,7 @@ public class WeatherActivity extends BaseActivity {
                     public void onSuccess(String s, Call call, Response response) {
                         Gson gson = new Gson();
                         WeatherBean weatherBean = gson.fromJson(s, WeatherBean.class);
-                        ToastUtil.showShort(WeatherActivity.this, weatherBean.getHeWeather5().get(0).getNow().getTmp());
+                        ToastUtil.showShort(weatherBean.getHeWeather5().get(0).getNow().getTmp());
                     }
                 });
     }

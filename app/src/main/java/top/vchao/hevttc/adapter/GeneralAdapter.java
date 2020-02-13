@@ -8,7 +8,7 @@ import xyz.zpayh.adapter.BaseViewHolder;
  * @ 描述：通用适配器
  * @ 作者: vchao
  */
-public class NNNAdapter extends BaseMultiAdapter {
+public class GeneralAdapter extends BaseMultiAdapter {
     @Override
     public void bind(BaseViewHolder holder, int layoutRes) {
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="8dp">
+    android:paddingTop="8dp"
+    android:paddingRight="16dp">
 
     <LinearLayout
         android:id="@+id/ll_news_type2"
@@ -17,8 +18,8 @@
         <TextView
             android:id="@+id/tv_type2_title"
             android:layout_width="match_parent"
-            android:lines="2"
             android:layout_height="wrap_content"
+            android:lines="2"
             android:text="习近平：坚持走中国特色社会主义社会治理之路"
             android:textColor="#000"
             android:textSize="18sp" />
@@ -49,12 +50,14 @@
 
     </LinearLayout>
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <ImageView
         android:id="@+id/iv_news_type2"
         android:layout_width="110dp"
         android:layout_height="80dp"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="6dp" />
+        android:layout_marginLeft="6dp"
+        android:scaleType="centerCrop"
+        tools:src="@mipmap/bg_xiaoli" />
 
     <TextView
         android:layout_width="match_parent"

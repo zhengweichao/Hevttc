@@ -2,12 +2,11 @@ package top.vchao.hevttc.bean;
 
 import android.graphics.Point;
 import android.text.TextUtils;
-
-import com.facebook.drawee.view.SimpleDraweeView;
+import android.widget.ImageView;
 
 import cn.bmob.v3.BmobObject;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.utils.FrescoUtil;
+import top.vchao.hevttc.utils.GlideImageLoader;
 import top.vchao.hevttc.utils.LogUtils;
 import xyz.zpayh.adapter.BaseViewHolder;
 import xyz.zpayh.adapter.IMultiItem;
@@ -128,34 +127,32 @@ public class NewsBean extends BmobObject implements IMultiItem {
             holder.setText(R.id.tv_type3_time, time);
             try {
                 if (!TextUtils.isEmpty(pic1)) {
-                    SimpleDraweeView sdv1 = holder.find(R.id.iv_news_type3_1);
-                    FrescoUtil.setWrapImage(sdv1, pic1);
+                    ImageView sdv1 = holder.find(R.id.iv_news_type3_1);
+                    GlideImageLoader.setImage(sdv1, pic1);
                 }
                 if (!TextUtils.isEmpty(pic2)) {
-                    SimpleDraweeView sdv2 = holder.find(R.id.iv_news_type3_2);
-                    FrescoUtil.setWrapImage(sdv2, pic2);
+                    ImageView sdv2 = holder.find(R.id.iv_news_type3_2);
+                    GlideImageLoader.setImage(sdv2, pic2);
                 }
                 if (!TextUtils.isEmpty(pic3)) {
-                    SimpleDraweeView sdv3 = holder.find(R.id.iv_news_type3_3);
-                    FrescoUtil.setWrapImage(sdv3, pic3);
+                    ImageView sdv3 = holder.find(R.id.iv_news_type3_3);
+                    GlideImageLoader.setImage(sdv3, pic3);
                 }
             } catch (Exception e) {
                 LogUtils.e("出现异常，图片没有加载完成");
             }
-//            LogUtils.e("新闻列表图片加载完毕");
         } else if ("2".equals(tag)) {
             holder.setText(R.id.tv_type2_title, title);
             holder.setText(R.id.tv_type2_author, author);
             holder.setText(R.id.tv_type2_time, time);
             try {
                 if (!TextUtils.isEmpty(pic1)) {
-                    SimpleDraweeView sdv1 = holder.find(R.id.iv_news_type2);
-                    FrescoUtil.setWrapImage(sdv1, pic1);
+                    ImageView sdv1 = holder.find(R.id.iv_news_type2);
+                    GlideImageLoader.setImage(sdv1, pic1);
                 }
             } catch (Exception e) {
                 LogUtils.e("出现异常，图片没有加载完成");
             }
-//            LogUtils.e("新闻列表图片加载完毕");
 
         } else {
             holder.setText(R.id.tv_type1_title, title);

@@ -7,7 +7,6 @@ import java.io.Serializable;
 import cn.bmob.v3.BmobObject;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.utils.FrescoUtil;
-import top.vchao.hevttc.utils.LogUtils;
 import xyz.zpayh.adapter.BaseViewHolder;
 import xyz.zpayh.adapter.IMultiItem;
 
@@ -35,12 +34,6 @@ public class PhotoBean extends BmobObject implements Serializable, IMultiItem {
         this.pic = pic;
     }
 
-
-/*    public PhotoBean(int iconId, String description) {
-        this.iconId = iconId;
-        this.description = description;
-    }*/
-
     public String getDescription() {
         return description;
     }
@@ -59,16 +52,12 @@ public class PhotoBean extends BmobObject implements Serializable, IMultiItem {
 
     @Override
     public int getLayoutRes() {
-        return R.layout.item_recycler;
+        return R.layout.item_photo_school;
     }
 
     @Override
     public void convert(BaseViewHolder holder) {
         if (!(pic == null)) {
-            LogUtils.e("加载图片" + pic);
-
-//            SimpleDraweeView sdv1 = holder.find(R.id.iv_icon);
-
             SimpleDraweeView sdv1 = holder.find(R.id.iv_icon);
             FrescoUtil.setWrapImage(sdv1, pic);
         }

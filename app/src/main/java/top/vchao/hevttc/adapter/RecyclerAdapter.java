@@ -49,7 +49,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     @Override
     public RecyclerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //创建一个根布局
-        View itemView = View.inflate(context, R.layout.item_recycler, null);
+        View itemView = View.inflate(context, R.layout.item_photo_school, null);
         return new RecyclerHolder(itemView);
     }
 

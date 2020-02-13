@@ -17,7 +17,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.activity.LoseDetailActivity;
-import top.vchao.hevttc.adapter.NNNAdapter;
+import top.vchao.hevttc.adapter.GeneralAdapter;
 import top.vchao.hevttc.bean.FindItem;
 import top.vchao.hevttc.utils.LogUtils;
 import top.vchao.hevttc.utils.ToastUtil;
@@ -35,7 +35,7 @@ public class FindThingFragment extends BaseFragment {
     @BindView(R.id.spl_main_news)
     SwipeRefreshLayout splMainNews;
 
-    private NNNAdapter findAdapter;
+    private GeneralAdapter findAdapter;
     private ArrayList<FindItem> findBeen;
 
     @Override
@@ -50,7 +50,7 @@ public class FindThingFragment extends BaseFragment {
 
     @Override
     public void initData() {
-        findAdapter = new NNNAdapter();
+        findAdapter = new GeneralAdapter();
         findBeen = new ArrayList<>();
         BmobQuery<FindItem> query = new BmobQuery<FindItem>();
         query.order("-time");

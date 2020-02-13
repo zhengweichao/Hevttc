@@ -17,7 +17,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.activity.BuyDetailActivity;
-import top.vchao.hevttc.adapter.NNNAdapter;
+import top.vchao.hevttc.adapter.GeneralAdapter;
 import top.vchao.hevttc.bean.BuyItem;
 import top.vchao.hevttc.utils.LogUtils;
 import top.vchao.hevttc.utils.ToastUtil;
@@ -37,7 +37,7 @@ public class SecondSaleFragment extends BaseFragment {
     SwipeRefreshLayout splMainNews;
 
     private ArrayList<BuyItem> buyBeen;
-    private NNNAdapter mAdapter;
+    private GeneralAdapter mAdapter;
 
     @Override
     public int getLayoutId() {
@@ -51,7 +51,7 @@ public class SecondSaleFragment extends BaseFragment {
 
     @Override
     public void initData() {
-        mAdapter = new NNNAdapter();
+        mAdapter = new GeneralAdapter();
         buyBeen = new ArrayList<>();
         BmobQuery<BuyItem> query = new BmobQuery<BuyItem>();
         query.order("-createdAt");

@@ -24,7 +24,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.adapter.NNNAdapter;
+import top.vchao.hevttc.adapter.GeneralAdapter;
 import top.vchao.hevttc.bean.LoveBean;
 import top.vchao.hevttc.bean.MyUser;
 import top.vchao.hevttc.utils.LogUtils;
@@ -39,7 +39,8 @@ public class LoveActivity extends BaseActivity {
 
     @BindView(R.id.rv_love)
     RecyclerView rvLove;
-    private NNNAdapter mAdapter;
+
+    private GeneralAdapter mAdapter;
     private ArrayList<LoveBean> LoveBeen;
 
     private EditText et_love_add_content;
@@ -57,7 +58,7 @@ public class LoveActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mAdapter = new NNNAdapter();
+        mAdapter = new GeneralAdapter();
         LoveBeen = new ArrayList<>();
         rvLove.setLayoutManager(new LinearLayoutManager(LoveActivity.this));
         BmobQuery<LoveBean> query = new BmobQuery<LoveBean>();
@@ -68,9 +69,7 @@ public class LoveActivity extends BaseActivity {
             public void done(List<LoveBean> object, BmobException e) {
                 if (e == null) {
                     LogUtils.e("查询成功：共" + object.size() + "条数据。");
-                    for (LoveBean LoveBean : object) {
-                        LoveBeen.add(LoveBean);
-                    }
+                    LoveBeen.addAll(object);
                     mAdapter.setData(LoveBeen);
                 } else {
                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
@@ -142,7 +141,6 @@ public class LoveActivity extends BaseActivity {
             public void done(String objectId, BmobException e) {
                 if (e == null) {
                     Toast.makeText(LoveActivity.this, "发布表白成功", Toast.LENGTH_SHORT).show();
-                    Log.e("zwc", "发布表白成功：" + objectId);
                     LoveBeen.add(0, bean);
                     mAdapter.setData(LoveBeen);
                     mAdapter.notifyDataSetChanged();

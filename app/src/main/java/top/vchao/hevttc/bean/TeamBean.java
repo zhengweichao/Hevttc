@@ -1,14 +1,14 @@
 package top.vchao.hevttc.bean;
 
 import android.text.TextUtils;
+import android.widget.ImageView;
 
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
 
 import cn.bmob.v3.BmobObject;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.utils.FrescoUtil;
 import top.vchao.hevttc.utils.LogUtils;
 import xyz.zpayh.adapter.BaseViewHolder;
 import xyz.zpayh.adapter.IMultiItem;
@@ -26,7 +26,6 @@ public class TeamBean extends BmobObject implements IMultiItem, Serializable {
     private String time;
     private String pic1;
     private String content;
-
 
     public String getContent() {
         return content;
@@ -83,13 +82,17 @@ public class TeamBean extends BmobObject implements IMultiItem, Serializable {
 
         try {
             if (!TextUtils.isEmpty(pic1)) {
-                SimpleDraweeView sdv1 = holder.find(R.id.iv_team_logo);
-                FrescoUtil.setWrapImage(sdv1, pic1);
+                ImageView sdv1 = holder.find(R.id.iv_team_logo);
+                Glide.with(sdv1.getContext())                             //配置上下文
+                        .load(pic1)      //设置图片路径(fix #8,文件名包含%符号 无法识别和显示)
+                        .error(R.mipmap.default_image)           //设置错误图片
+                        .placeholder(R.mipmap.default_image)     //设置占位图片
+                        .centerCrop()
+                        .into(sdv1);
             }
         } catch (Exception e) {
             LogUtils.e("出现异常，图片没有加载完成");
         }
-        LogUtils.e("新闻列表图片加载完毕");
     }
 
     @Override

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import cn.bmob.v3.BmobObject;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.utils.LogUtils;
 import xyz.zpayh.adapter.BaseViewHolder;
 import xyz.zpayh.adapter.IMultiItem;
 
@@ -51,7 +50,6 @@ public class LoveBean extends BmobObject implements IMultiItem, Serializable {
 
     @Override
     public void convert(BaseViewHolder holder) {
-        LogUtils.e("填充数据~~~~~");
         holder.setText(R.id.tv_love_content, content);
         holder.setText(R.id.tv_love_touser, "TO: " + touser);
         holder.setText(R.id.tv_love_author, "FROM： " + author);

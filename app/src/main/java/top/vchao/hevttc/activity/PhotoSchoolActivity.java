@@ -20,7 +20,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.adapter.NNNAdapter;
+import top.vchao.hevttc.adapter.GeneralAdapter;
 import top.vchao.hevttc.adapter.RecyclerAdapter;
 import top.vchao.hevttc.bean.PhotoBean;
 import top.vchao.hevttc.utils.LogUtils;
@@ -42,7 +42,7 @@ public class PhotoSchoolActivity extends BaseActivity {
 
     private List<PhotoBean> mStaggerData;
 
-    private NNNAdapter photoAdapter;
+    private GeneralAdapter photoAdapter;
     private int refreshCount = 1;
 
     @Override
@@ -56,7 +56,7 @@ public class PhotoSchoolActivity extends BaseActivity {
     }
 
     void initData() {
-        photoAdapter = new NNNAdapter();
+        photoAdapter = new GeneralAdapter();
         mStaggerData = new ArrayList<PhotoBean>();
         BmobQuery<PhotoBean> query = new BmobQuery<PhotoBean>();
         query.order("id");
@@ -67,13 +67,10 @@ public class PhotoSchoolActivity extends BaseActivity {
             @Override
             public void done(List<PhotoBean> object, BmobException e) {
                 if (e == null) {
-                    Log.e("zwc", "查询成功：共" + object.size() + "条数据。");
-                    for (PhotoBean bean : object) {
-                        mStaggerData.add(bean);
-                    }
+                    mStaggerData.addAll(object);
                     photoAdapter.setData(mStaggerData);
                 } else {
-                    Log.e("zwc", "失败：" + e.getMessage() + "," + e.getErrorCode());
+                    LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
                 }
             }
         });
@@ -136,7 +133,7 @@ public class PhotoSchoolActivity extends BaseActivity {
                                     mSwipeRefreshLayout.setRefreshing(false);
 
                                 } else {
-                                    Log.e("zwc", "失败：" + e.getMessage() + "," + e.getErrorCode());
+                                    LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
                                 }
                             }
                         });

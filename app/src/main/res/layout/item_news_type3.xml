@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="8dp">
+    android:paddingTop="8dp"
+    android:paddingRight="16dp">
 
     <TextView
         android:id="@+id/tv_type3_title"
@@ -21,25 +22,31 @@
         android:layout_marginTop="7dp"
         android:orientation="horizontal">
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/iv_news_type3_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="3dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/bg_xiaoli" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/iv_news_type3_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="3dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/bg_xiaoli" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/iv_news_type3_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/bg_xiaoli" />
 
     </LinearLayout>
 
