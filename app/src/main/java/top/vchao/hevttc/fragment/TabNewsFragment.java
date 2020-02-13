@@ -8,11 +8,8 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import cn.hugeterry.coordinatortablayout.CoordinatorTabLayout;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.cootab.MainFragment1;
-import top.vchao.hevttc.cootab.MainFragment2;
-import top.vchao.hevttc.cootab.MainFragment3;
-import top.vchao.hevttc.cootab.MainFragment4;
-import top.vchao.hevttc.cootab.MyPagerAdapter;
+import top.vchao.hevttc.adapter.MyPagerAdapter;
+import top.vchao.hevttc.constant.Config;
 
 /**
  * @ 创建时间: 2017/9/21 on 19:39.
@@ -26,9 +23,8 @@ public class TabNewsFragment extends BaseFragment {
     @BindView(R.id.cootablayout_news)
     CoordinatorTabLayout mCoordinatorTabLayout;
 
-    private int[] mImageArray, mColorArray;
-
-    private final String[] mTitles = {"通知公告", "新闻速递", "自媒体", "校园文化"};
+    private final String[] mTitles = {Config.MODULE_NEWS_ONE, Config.MODULE_NEWS_TWO,
+            Config.MODULE_NEWS_THREE, Config.MODULE_NEWS_FOUR};
     private ArrayList<Fragment> mFragments;
 
     @Override
@@ -42,12 +38,12 @@ public class TabNewsFragment extends BaseFragment {
         initFragments();
         initViewPager();
 
-        mImageArray = new int[]{
+        int[] mImageArray = new int[]{
                 R.mipmap.img_keshi1,
                 R.mipmap.img_keshi4,
                 R.mipmap.img_bg_news3,
                 R.mipmap.img_bg_news4};
-        mColorArray = new int[]{
+        int[] mColorArray = new int[]{
                 android.R.color.holo_blue_light,
                 android.R.color.holo_red_light,
                 android.R.color.holo_orange_light,
@@ -66,10 +62,10 @@ public class TabNewsFragment extends BaseFragment {
 
     private void initFragments() {
         mFragments = new ArrayList<>();
-        mFragments.add(MainFragment1.getInstance(mTitles[0]));
-        mFragments.add(MainFragment2.getInstance(mTitles[1]));
-        mFragments.add(MainFragment3.getInstance(mTitles[2]));
-        mFragments.add(MainFragment4.getInstance(mTitles[3]));
+        mFragments.add(NewsListFragment.getInstance("a"));
+        mFragments.add(NewsListFragment.getInstance("b"));
+        mFragments.add(NewsListFragment.getInstance("c"));
+        mFragments.add(NewsListFragment.getInstance("d"));
     }
 
 }

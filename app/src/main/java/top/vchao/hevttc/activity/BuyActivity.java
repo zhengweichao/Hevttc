@@ -10,8 +10,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import cn.hugeterry.coordinatortablayout.CoordinatorTabLayout;
 import top.vchao.hevttc.R;
+import top.vchao.hevttc.adapter.MyPagerAdapter;
 import top.vchao.hevttc.constant.Config;
-import top.vchao.hevttc.cootab.MyPagerAdapter;
 import top.vchao.hevttc.fragment.SecondBuyFragment;
 import top.vchao.hevttc.fragment.SecondSaleFragment;
 

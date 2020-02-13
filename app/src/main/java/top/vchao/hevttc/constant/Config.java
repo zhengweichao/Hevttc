@@ -17,4 +17,10 @@ public class Config {
 
     public static final String MODULE_NAME_LOSE = "失物招领";
     public static final String MODULE_NAME_FIND = "寻物启事";
+
+    // 新闻中心 四个栏目的标题
+    public static final String MODULE_NEWS_ONE = "通知公告";
+    public static final String MODULE_NEWS_TWO = "新闻速递";
+    public static final String MODULE_NEWS_THREE = "自媒体";
+    public static final String MODULE_NEWS_FOUR = "校园文化";
 }
