@@ -99,8 +99,6 @@ dependencies {
 
     implementation 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.1.0'
     implementation 'xyz.zpayh:sherlockadapter:1.1.1'
-    implementation 'com.facebook.fresco:fresco:1.2.0'
-    implementation 'com.facebook.fresco:webpsupport:1.2.0'
     implementation 'com.stephentuso:welcome:1.4.1'
     implementation 'com.youth.banner:banner:1.4.10'
 

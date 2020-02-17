@@ -1,12 +1,12 @@
 package top.vchao.hevttc.bean;
 
-import com.facebook.drawee.view.SimpleDraweeView;
+import android.widget.ImageView;
 
 import java.io.Serializable;
 
 import cn.bmob.v3.BmobObject;
 import top.vchao.hevttc.R;
-import top.vchao.hevttc.utils.FrescoUtil;
+import top.vchao.hevttc.utils.GlideImageLoader;
 import xyz.zpayh.adapter.BaseViewHolder;
 import xyz.zpayh.adapter.IMultiItem;
 
@@ -16,11 +16,9 @@ import xyz.zpayh.adapter.IMultiItem;
  * @ 作者: vchao
  */
 public class PhotoBean extends BmobObject implements Serializable, IMultiItem {
-    private String id;
-    private String name;
-    //    private int iconId;
-    private String pic;
 
+    private String name;
+    private String pic;
     private String description;
 
     public PhotoBean() {
@@ -58,8 +56,8 @@ public class PhotoBean extends BmobObject implements Serializable, IMultiItem {
     @Override
     public void convert(BaseViewHolder holder) {
         if (!(pic == null)) {
-            SimpleDraweeView sdv1 = holder.find(R.id.iv_icon);
-            FrescoUtil.setWrapImage(sdv1, pic);
+            final ImageView sdv1 = holder.find(R.id.iv_icon);
+            GlideImageLoader.setImage(sdv1, pic);
         }
     }
 
@@ -68,11 +66,4 @@ public class PhotoBean extends BmobObject implements Serializable, IMultiItem {
         return 0;
     }
 
-/*    public int getIconId() {
-        return iconId;
-    }
-
-    public void setIconId(int iconId) {
-        this.iconId = iconId;
-    }*/
 }
