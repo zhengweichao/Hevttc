@@ -32,12 +32,12 @@ public class TeamDetailActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         teambean = (TeamBean) getIntent().getSerializableExtra("teambean");
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         tvTeamDetailTitle.setText(teambean.getTitle());
         tvTeamDetailTime.setText(teambean.getTime());
         tvTeamDetailContent.setText(teambean.getContent());

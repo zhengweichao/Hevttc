@@ -32,12 +32,12 @@ public class XiaoliActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
-
+    protected void initView() {
+        initTitleBar("校历");
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         String lunar = DateUtil.getChnieseDate(TimeUtil.getYear(), TimeUtil.getMonth(), TimeUtil.getDate());
         tvDateTodayNongli.setText(lunar);
         String date = TimeUtil.getCurrentTimeInString(TimeUtil.DATE_FORMAT_DATE);
@@ -54,7 +54,6 @@ public class XiaoliActivity extends BaseActivity {
                     }
                 })
                 .setView(viewdialog)
-                .setIcon(R.mipmap.ic_launcher)
                 .create();
         dialog.show();
     }

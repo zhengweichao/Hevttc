@@ -33,7 +33,7 @@ public class ScoreAtivity extends BaseAppCompatActivity {
     }
 
     @Override
-    public void initView() {
+    protected void initView() {
         mScoreList = (ListView) findViewById(R.id.lv_score_list);
     }
 

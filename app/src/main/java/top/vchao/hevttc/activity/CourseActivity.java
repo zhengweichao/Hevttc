@@ -146,7 +146,7 @@ public class CourseActivity extends BaseActivity implements AdapterView.OnItemSe
     };
 
     @Override
-    public void initView() {
+    protected void initView() {
 
         mWeekDaySpinner = (Spinner) findViewById(R.id.week_day_spinner);
 

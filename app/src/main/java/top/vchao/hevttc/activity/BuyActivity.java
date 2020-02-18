@@ -15,6 +15,9 @@ import top.vchao.hevttc.constant.Config;
 import top.vchao.hevttc.fragment.SecondBuyFragment;
 import top.vchao.hevttc.fragment.SecondSaleFragment;
 
+/**
+ * 二手交易页面
+ */
 public class BuyActivity extends BaseAppCompatActivity {
 
     @BindView(R.id.vp)
@@ -31,7 +34,7 @@ public class BuyActivity extends BaseAppCompatActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         initFragments();
         initViewPager();
 

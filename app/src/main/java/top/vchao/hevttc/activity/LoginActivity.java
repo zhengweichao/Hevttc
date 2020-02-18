@@ -44,13 +44,13 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    void dealBundle(@Nullable Bundle savedInstanceState) {
+    public void dealBundle(@Nullable Bundle savedInstanceState) {
         welcomeScreen = new WelcomeHelper(this, MyWelcomeActivity.class);
         welcomeScreen.show(savedInstanceState);
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         if (Config.useTestAccount) {
             etUserName.setText(Config.TestAccount);
             etPassword.setText(Config.TestPassword);

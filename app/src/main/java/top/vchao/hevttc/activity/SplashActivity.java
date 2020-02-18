@@ -55,7 +55,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         btn_splash_jump.setVisibility(View.VISIBLE);
         countDownTimer.start();
     }

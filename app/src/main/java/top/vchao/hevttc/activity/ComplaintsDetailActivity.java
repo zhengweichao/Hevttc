@@ -38,12 +38,12 @@ public class ComplaintsDetailActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         initTitleBar("权益保障");
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
         spCompKind.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

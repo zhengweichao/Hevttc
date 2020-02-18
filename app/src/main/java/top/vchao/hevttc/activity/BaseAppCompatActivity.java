@@ -52,7 +52,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         });
     }
 
-    public void initFragment() {
+    protected void initFragment() {
 
     }
 
@@ -63,7 +63,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
     /**
      * 获取上一个页面传递来的intent数据
      */
-    public void getPreIntent() {
+    protected void getPreIntent() {
     }
 
 
@@ -73,7 +73,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
      * @param color
      * @param text
      */
-    void initTitleBar(int color, int text) {
+    protected void initTitleBar(int color, int text) {
         View btn_back = findViewById(R.id.btn_back);
         if (btn_back != null) {
             btn_back.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +89,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         tvTitle.setText(this.getResources().getString(text));
     }
 
-    void initTitleBar(String text) {
+    protected void initTitleBar(String text) {
         TextView tvTitle = (TextView) findViewById(R.id.tvTitle);
         if (tvTitle == null) return;
         tvTitle.setText(text);
@@ -111,19 +111,19 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
     /**
      * 初始化View
      */
-    void initView() {
+    protected void initView() {
     }
 
     /**
      * 初始化界面数据
      */
-    void initData() {
+    protected void initData() {
     }
 
     /**
      * 绑定监听器与适配器
      */
-    void initListener() {
+    protected void initListener() {
     }
 
 }

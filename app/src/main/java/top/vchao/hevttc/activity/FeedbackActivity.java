@@ -37,7 +37,7 @@ public class FeedbackActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         initTitleBar("意见反馈");
     }
 

@@ -45,12 +45,12 @@ public abstract class BaseFragment extends Fragment {
     /**
      * @return 布局文件id
      */
-    public abstract int getLayoutId();
+    protected abstract int getLayoutId();
 
     /**
      * 获取 上一个页面 传的数据
      */
-    public void getPreIntent() {
+    protected void getPreIntent() {
     }
 
     //view的初始化
@@ -67,13 +67,13 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 初始化数据
      */
-    public void initData() {
+    protected void initData() {
     }
 
     /**
      * 初始化监听器
      */
-    public void initListener() {
+    protected void initListener() {
     }
 
     @Override

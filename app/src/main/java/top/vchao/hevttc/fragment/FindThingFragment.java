@@ -39,7 +39,7 @@ public class FindThingFragment extends BaseFragment {
     private ArrayList<FindItem> findBeen;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_main;
     }
 
@@ -49,7 +49,7 @@ public class FindThingFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         findAdapter = new GeneralAdapter();
         findBeen = new ArrayList<>();
         BmobQuery<FindItem> query = new BmobQuery<FindItem>();
@@ -76,7 +76,7 @@ public class FindThingFragment extends BaseFragment {
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
         findAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {

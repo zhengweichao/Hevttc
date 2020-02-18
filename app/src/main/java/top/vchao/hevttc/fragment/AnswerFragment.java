@@ -33,7 +33,7 @@ public class AnswerFragment extends BaseFragment implements RadioGroup.OnChecked
     }
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_quest;
     }
 
@@ -76,12 +76,12 @@ public class AnswerFragment extends BaseFragment implements RadioGroup.OnChecked
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
 
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         tv_title.setText("" + questBean.getTitle());
         //如果没有传递数据，则退出
         if (questBean == null) {

@@ -88,12 +88,12 @@ public class TabHomeFragment extends BaseFragment {
     };
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_home;
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         //设置布局管理器
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 4));
 
@@ -119,7 +119,7 @@ public class TabHomeFragment extends BaseFragment {
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
         moudleAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int positon) {

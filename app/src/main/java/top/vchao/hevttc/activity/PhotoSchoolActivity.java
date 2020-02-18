@@ -51,11 +51,11 @@ public class PhotoSchoolActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
     }
 
-    void initData() {
+    protected void initData() {
         photoAdapter = new GeneralAdapter();
         mStaggerData = new ArrayList<PhotoBean>();
         BmobQuery<PhotoBean> query = new BmobQuery<PhotoBean>();
@@ -80,7 +80,7 @@ public class PhotoSchoolActivity extends BaseActivity {
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
         photoAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {
@@ -88,7 +88,9 @@ public class PhotoSchoolActivity extends BaseActivity {
                 Intent intent = new Intent(PhotoSchoolActivity.this, PicDetailActivity.class);
                 intent.putExtra("bean", mStaggerData.get(position));
                 if (RomUtils.isAndroid5()) {
-                    Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(PhotoSchoolActivity.this, view, "shareView").toBundle();
+                    Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(PhotoSchoolActivity.this,
+                            view.findViewById(R.id.iv_icon),
+                            "shareView").toBundle();
                     startActivity(intent, bundle);
                 } else {
                     startActivity(intent);

@@ -46,7 +46,7 @@ public class LoseDetailActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         losebean = (LoseItem) getIntent().getSerializableExtra("losebean");
         findbean = (FindItem) getIntent().getSerializableExtra("findbean");
         if (losebean != null) {

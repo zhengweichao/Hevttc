@@ -31,7 +31,7 @@ public class ChooseXndActivity extends BaseAppCompatActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         mToolbar = (Toolbar) findViewById(R.id.choose_xnd_toolbar);
         mToolbar.setTitle("选择课表");// 标题的文字需在setSupportActionBar之前，不然会无效
         setSupportActionBar(mToolbar); // toolbar.setSubtitle("副标题");
@@ -157,7 +157,6 @@ public class ChooseXndActivity extends BaseAppCompatActivity {
         startActivity(intent);
 
     }
-
 
 }
 

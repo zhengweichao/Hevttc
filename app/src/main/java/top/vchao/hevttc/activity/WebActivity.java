@@ -6,11 +6,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.utils.LogUtils;
+import top.vchao.hevttc.utils.ToastUtil;
 
 
 /**
@@ -30,7 +30,7 @@ public class WebActivity extends BaseActivity {
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         url = getIntent().getStringExtra("url");
         MyWebViewClient myWebViewClient = new MyWebViewClient();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -53,7 +53,7 @@ public class WebActivity extends BaseActivity {
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
 
     }
 
@@ -84,7 +84,7 @@ public class WebActivity extends BaseActivity {
             return true;
         } else {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
-                Toast.makeText(getApplicationContext(), "再按一次退出当前页面", Toast.LENGTH_SHORT).show();
+                ToastUtil.showShort("再按一次退出当前页面");
                 mExitTime = System.currentTimeMillis();
             } else {
                 onBackPressed();

@@ -9,7 +9,9 @@ import butterknife.BindView;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.bean.PhotoBean;
 
-
+/**
+ * 图说校园详情页面
+ */
 public class PicDetailActivity extends BaseActivity {
 
     @BindView(R.id.iv_detail)
@@ -24,12 +26,13 @@ public class PicDetailActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
+        initTitleBar("图说校园");
         bean = (PhotoBean) getIntent().getSerializableExtra("bean");
     }
 
     @Override
-    void initData() {
+    protected void initData() {
 //        ivDetail.setImageResource(getIntent().getExtras().getInt("id"));
 //        String desc = getIntent().getStringExtra("desc");
 //        tvDescription.setText("  "+desc);

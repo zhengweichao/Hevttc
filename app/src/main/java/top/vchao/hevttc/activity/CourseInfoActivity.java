@@ -26,7 +26,7 @@ public class CourseInfoActivity extends BaseAppCompatActivity {
     private TextView courseWeek;
 
     @Override
-    public void initView() {
+    protected void initView() {
         Intent intent = this.getIntent();
         course = (Course) intent.getSerializableExtra("course");
 
@@ -56,7 +56,6 @@ public class CourseInfoActivity extends BaseAppCompatActivity {
 
     @Override
     protected void initData() {
-
 
         courseName.setText(course.getName());
         courseRoom.setText(course.getClassRoom());

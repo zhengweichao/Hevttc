@@ -37,12 +37,12 @@ public class TeamActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         initTitleBar("社团组织");
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         mAdapter = new GeneralAdapter();
         teamBeen = new ArrayList<>();
         rvTeam.setLayoutManager(new LinearLayoutManager(TeamActivity.this));
@@ -66,7 +66,7 @@ public class TeamActivity extends BaseActivity {
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {

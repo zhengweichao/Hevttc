@@ -73,7 +73,7 @@ public class UserInfoActivity extends BaseActivity {
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         MyUser user = BmobUser.getCurrentUser(MyUser.class);
         tvUserInfoTel.setText(user.getMobilePhoneNumber());
         tvUserInfoCreated.setText(user.getCreatedAt());

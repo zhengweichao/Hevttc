@@ -58,7 +58,7 @@ public class NewsListFragment extends BaseFragment {
     }
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_main;
     }
 
@@ -68,7 +68,7 @@ public class NewsListFragment extends BaseFragment {
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {
@@ -125,7 +125,7 @@ public class NewsListFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         mAdapter = new GeneralAdapter();
         newsBeanList = new ArrayList<>();
         BmobQuery<NewsBean> query = new BmobQuery<NewsBean>();

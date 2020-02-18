@@ -41,12 +41,12 @@ public class TabMyFragment extends BaseFragment {
     TextView tvInfoState;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_my;
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         MyUser user = BmobUser.getCurrentUser(MyUser.class);
         if (!TextUtils.isEmpty(user.getUsername())) {
             tvInfoUsername.setText(user.getUsername());

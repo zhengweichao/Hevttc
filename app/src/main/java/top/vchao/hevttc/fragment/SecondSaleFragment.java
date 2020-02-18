@@ -40,7 +40,7 @@ public class SecondSaleFragment extends BaseFragment {
     private GeneralAdapter mAdapter;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_main;
     }
 
@@ -50,7 +50,7 @@ public class SecondSaleFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         mAdapter = new GeneralAdapter();
         buyBeen = new ArrayList<>();
         BmobQuery<BuyItem> query = new BmobQuery<BuyItem>();
@@ -78,7 +78,7 @@ public class SecondSaleFragment extends BaseFragment {
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {

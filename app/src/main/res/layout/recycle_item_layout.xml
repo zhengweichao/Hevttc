@@ -12,7 +12,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="20dp"
         android:contentDescription="@string/app_name"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_app_logo" />
 
     <TextView
         android:id="@+id/tv_name"

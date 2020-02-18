@@ -71,7 +71,7 @@ public class AnswerActivity extends BaseActivity implements Chronometer.OnChrono
     }
 
     @Override
-    void initView() {
+    protected void initView() {
 
 //      联网获取数据
         initNet(type);
@@ -81,12 +81,12 @@ public class AnswerActivity extends BaseActivity implements Chronometer.OnChrono
     }
 
     @Override
-    void initData() {
+    protected void initData() {
 
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
 
     }
 

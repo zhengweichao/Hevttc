@@ -39,7 +39,7 @@ public class SecondBuyFragment extends BaseFragment {
     private ArrayList<SaleItem> saleBeen;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_main;
     }
 
@@ -49,7 +49,7 @@ public class SecondBuyFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         mAdapter = new GeneralAdapter();
         saleBeen = new ArrayList<>();
 
@@ -78,7 +78,7 @@ public class SecondBuyFragment extends BaseFragment {
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {

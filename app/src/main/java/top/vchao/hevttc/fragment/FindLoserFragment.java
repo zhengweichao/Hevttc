@@ -40,7 +40,7 @@ public class FindLoserFragment extends BaseFragment {
     private ArrayList<LoseItem> LoseBeen;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_main;
     }
 
@@ -50,7 +50,7 @@ public class FindLoserFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         LoseAdapter = new GeneralAdapter();
         LoseBeen = new ArrayList<>();
 
@@ -77,7 +77,7 @@ public class FindLoserFragment extends BaseFragment {
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
         LoseAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {

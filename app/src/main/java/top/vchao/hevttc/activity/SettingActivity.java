@@ -27,9 +27,8 @@ public class SettingActivity extends BaseAppCompatActivity {
     private TextView mCurrXnd;
     private int mCurrWeekNum;
 
-
     @Override
-    public void initView() {
+    protected void initView() {
         mCurrWeekView = (TextView) findViewById(R.id.setting_curr_week_des);
         mCurrXnd = (TextView) findViewById(R.id.tv_curr_xnd);
         updateCurrWeek();
@@ -108,7 +107,6 @@ public class SettingActivity extends BaseAppCompatActivity {
         }
 
     }
-
 
     private void clickMyCourse() {
         Intent intent = new Intent(SettingActivity.this, ChooseXndActivity.class);

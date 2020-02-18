@@ -97,7 +97,7 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         MyUser user = BmobUser.getCurrentUser(MyUser.class);
         if (!TextUtils.isEmpty(user.getMobilePhoneNumber())) {
             etLoseTel.setText(user.getMobilePhoneNumber());
@@ -132,7 +132,7 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
         spLoseKind.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

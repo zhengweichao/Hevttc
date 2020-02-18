@@ -34,7 +34,7 @@ public abstract class BottomTabBaseActivity extends BaseAppCompatActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         adapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -57,7 +57,7 @@ public abstract class BottomTabBaseActivity extends BaseAppCompatActivity {
     }
 
     @Override
-    public void initListener() {
+    protected void initListener() {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

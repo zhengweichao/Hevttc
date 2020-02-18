@@ -56,7 +56,6 @@ public class CourseLoginActivity extends BaseAppCompatActivity {
     private ImageView ivCheckCode;
     private TextView mJwUrlView;
 
-
     private boolean isBinder = false;
 
     private String doQurey;
@@ -191,7 +190,7 @@ public class CourseLoginActivity extends BaseAppCompatActivity {
     }
 
     @Override
-    public void initView() {
+    protected void initView() {
         initActionBar();
         etCourseNumber = (EditText) findViewById(R.id.et_course_username);
         etCoursePassword = (EditText) findViewById(R.id.et_course_password);

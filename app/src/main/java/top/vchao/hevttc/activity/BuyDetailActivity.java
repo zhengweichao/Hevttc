@@ -16,6 +16,7 @@ import top.vchao.hevttc.R;
 import top.vchao.hevttc.bean.BuyItem;
 import top.vchao.hevttc.bean.SaleItem;
 import top.vchao.hevttc.utils.LogUtils;
+import top.vchao.hevttc.utils.ToastUtil;
 
 /**
  * 二手交易详情页面
@@ -48,7 +49,7 @@ public class BuyDetailActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         Buybean = (BuyItem) getIntent().getSerializableExtra("buybean");
         salebean = (SaleItem) getIntent().getSerializableExtra("salebean");
         if (Buybean != null) {
@@ -103,7 +104,7 @@ public class BuyDetailActivity extends BaseActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "该用户没有留下电话信息，请私信尝试", Toast.LENGTH_SHORT).show();
+            ToastUtil.showShort("该用户没有留下电话信息，请私信尝试");
         }
     }
 }

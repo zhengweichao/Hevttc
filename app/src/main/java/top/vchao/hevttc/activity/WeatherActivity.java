@@ -42,7 +42,7 @@ public class WeatherActivity extends BaseActivity {
     }
 
     @Override
-    public void initView() {
+    protected void initView() {
         //透明状态栏 导航栏
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
@@ -74,7 +74,7 @@ public class WeatherActivity extends BaseActivity {
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
         //TODO:请求网络数据
         OkGo.get(weather_url)
                 .execute(new StringCallback() {
@@ -89,7 +89,7 @@ public class WeatherActivity extends BaseActivity {
 
     @Override
     @SuppressWarnings("deprecation")
-    public void initListener() {
+    protected void initListener() {
         weatherRView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {

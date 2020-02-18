@@ -28,12 +28,12 @@ public class TabNewsFragment extends BaseFragment {
     private ArrayList<Fragment> mFragments;
 
     @Override
-    public int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_news;
     }
 
     @Override
-    public void initData() {
+    protected void initData() {
 
         initFragments();
         initViewPager();

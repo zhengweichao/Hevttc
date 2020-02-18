@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
@@ -55,6 +54,7 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
     RecyclerView rvBuyAddPic;
     @BindView(R.id.et_buy_tel)
     EditText etBuyTel;
+
     private String BuyUnit = "我想出手";
     private ArrayList<ImageItem> selImageList; //当前选择的所有图片
     private int maxImgCount = 1;               //允许选择图片最大数
@@ -71,7 +71,7 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         MyUser user = BmobUser.getCurrentUser(MyUser.class);
         if (!TextUtils.isEmpty(user.getMobilePhoneNumber())) {
             etBuyTel.setText(user.getMobilePhoneNumber());
@@ -80,7 +80,7 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         initImagePicker();
         selImageList = new ArrayList<>();
         adapter = new ImagePickerAdapter(BuyAddActivity.this, selImageList, maxImgCount);
@@ -89,8 +89,6 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
         rvBuyAddPic.setLayoutManager(new GridLayoutManager(BuyAddActivity.this, 3));
         rvBuyAddPic.setHasFixedSize(true);
         rvBuyAddPic.setAdapter(adapter);
-
-
     }
 
     private void initImagePicker() {
@@ -108,7 +106,7 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
         spBuyKind.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -294,7 +292,7 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
                     public void onError(Throwable e) {
                         // 当压缩过程出现问题时调用
                         LoadDialog.dismiss(BuyAddActivity.this);
-                        Toast.makeText(BuyAddActivity.this, "压缩失败！", Toast.LENGTH_SHORT).show();
+                        ToastUtil.showShort("压缩失败！");
                     }
                 }).launch();    //启动压缩
     }
@@ -320,7 +318,7 @@ public class BuyAddActivity extends BaseActivity implements ImagePickerAdapter.O
             }
 
         } else {
-            Toast.makeText(this, "请将信息填写完整！", Toast.LENGTH_SHORT).show();
+            ToastUtil.showShort("请将信息填写完整！");
         }
 
     }

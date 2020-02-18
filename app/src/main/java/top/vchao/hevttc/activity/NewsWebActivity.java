@@ -6,10 +6,10 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import top.vchao.hevttc.R;
+import top.vchao.hevttc.utils.ToastUtil;
 
 public class NewsWebActivity extends BaseActivity {
 
@@ -22,10 +22,10 @@ public class NewsWebActivity extends BaseActivity {
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         String url = getIntent().getStringExtra("url");
         if (TextUtils.isEmpty(url)) {
-            Toast.makeText(this, "该新闻已经失效！", Toast.LENGTH_SHORT).show();
+            ToastUtil.showShort("该新闻已经失效！");
             return;
         }
         MyWebViewClient myWebViewClient = new MyWebViewClient();

@@ -16,7 +16,7 @@ public class AboutActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         initTitleBar("关于");
     }
 }

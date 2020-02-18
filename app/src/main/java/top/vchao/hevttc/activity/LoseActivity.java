@@ -35,7 +35,7 @@ public class LoseActivity extends BaseAppCompatActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         initFragments();
         initViewPager();
 

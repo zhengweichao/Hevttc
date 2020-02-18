@@ -34,8 +34,8 @@ public class ContactsActivity extends BaseActivity {
     RecyclerView rlRecycleView;
     @BindView(R.id.side_bar)
     SideBar sideBar;
-    private ContactAdapter mAdapter;
 
+    private ContactAdapter mAdapter;
     private CustomItemDecoration decoration;
 
     List<Teacher> nameList = new ArrayList<>();
@@ -47,8 +47,8 @@ public class ContactsActivity extends BaseActivity {
     }
 
     @Override
-    public void initView() {
-        initTitleBar(R.color.colorPrimary, R.string.contacts);
+    protected void initView() {
+        initTitleBar(getString(R.string.contacts));
 
         mAdapter = new ContactAdapter(this);
 
@@ -76,23 +76,9 @@ public class ContactsActivity extends BaseActivity {
     }
 
     @Override
-    void initData() {
-/*        String[] names = {
-                "数信院-韩坤-老师", "数信院-张志广-老师", "数信院-王奭-老师", "党宣部-李竹韵-老师",
-                "图书馆-王春兰-老师", "图书馆-赵跃-老师", "校团委-于箭-老师", "后勤水电-王师傅",
-                "物理系-张步英-老师", "物理系-张金旭-老师", "物理系-郑丽洁-老师", "招生办-孙志杨-老师",
-                "财经院-高士坤-老师", "工商-曹佳-老师", "体育系-孙颖-老师", "教务处-钱佳颖-老师",
-                "体育系-王成纲-老师", "财经-高凤云-老师", "学生处-赵冀霞-老师","宿管-李丽红-阿姨"};
-        String[] tels = {
-                "13930386897", "18833522955", "13333330910", "13932074255",
-                "13930023254", "15033551108", "13780478042", "13932074255",
-                "13930023254", "15033551108", "13780478042", "13932074255",
-                "13930023254", "15033551108", "13780478042", "13932074255",
-                "13930023254", "15033551108", "13780478042", "13932074255",};*/
-
+    protected void initData() {
         BmobQuery<Teacher> query = new BmobQuery<Teacher>();
-
-        //返回6条数据，如果不加上这条语句，默认返回10条数据
+        //返回100条数据
         query.setLimit(100);
         //执行查询方法
         query.findObjects(new FindListener<Teacher>() {
@@ -100,9 +86,7 @@ public class ContactsActivity extends BaseActivity {
             public void done(List<Teacher> object, BmobException e) {
                 if (e == null) {
                     LogUtils.e("查询成功：共" + object.size() + "条数据。");
-                    for (Teacher newsBean : object) {
-                        nameList.add(newsBean);
-                    }
+                    nameList.addAll(object);
                     //对数据源进行排序
                     CommonUtil.sortData(nameList);
                     //返回一个包含所有Tag字母在内的字符串并赋值给tagsStr
@@ -126,25 +110,16 @@ public class ContactsActivity extends BaseActivity {
                         }
                     });
 
-
                 } else {
                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
                 }
             }
         });
 
-/*        for (int i = 0; i <names.length ; i++) {
-            Teacher bean = new Teacher();
-            bean.setName(names[i]);
-            bean.setTel(tels[i]);
-            nameList.TestAdd(bean);
-        }*/
-
-
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
 
 //        点击事件
         mAdapter.setOnItemClickListener(new ContactAdapter.OnItemClickListener() {

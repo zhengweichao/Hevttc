@@ -31,13 +31,13 @@ public class GradeActivity extends BaseActivity {
     }
 
     @Override
-    void initView() {
+    protected void initView() {
         lvScore = (ListView) findViewById(R.id.lv_activity_score_detail);
         tvScore = (TextView) findViewById(R.id.tv_activity_score_score);
     }
 
     @Override
-    void initData() {
+    protected void initData() {
 //        接收传递来的数据
         timu = getIntent().getCharSequenceArrayListExtra("timu");
         String grade = getIntent().getExtras().get("grade").toString().trim();
@@ -48,7 +48,7 @@ public class GradeActivity extends BaseActivity {
     }
 
     @Override
-    void initListener() {
+    protected void initListener() {
 
     }
 
