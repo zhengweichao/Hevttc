@@ -23,18 +23,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:text="出一个小镜子"
                 android:textColor="#000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="出一个小镜子" />
 
             <TextView
                 android:id="@+id/tv_detail_buy_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:text="10元"
                 android:textColor="@color/HomeColor"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="10元" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,16 +46,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="7dp"
-                    android:text="郑卫超"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    tools:text="郑卫超" />
 
                 <TextView
                     android:id="@+id/tv_detail_buy_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="7dp"
-                    android:text="2017-10-13"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    tools:text="2017-10-13" />
             </LinearLayout>
 
 
@@ -73,8 +73,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                tools:text="联系方式：13791516886"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:text="联系方式：13791516886" />
 
             <ImageView
                 android:id="@+id/iv_buy_detail"

@@ -8,10 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
+        android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="10dp">
+        android:paddingBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,9 +26,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:inputType="number"
             android:layout_weight="1"
             android:hint="@string/stu_no_tips"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="20"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -36,10 +38,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
         android:paddingLeft="20dp"
+        android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="10dp">
+        android:paddingBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,6 +58,8 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:hint="姓名"
+            android:lines="1"
+            android:maxLength="10"
             android:textSize="18sp" />
     </LinearLayout>
 

@@ -16,7 +16,7 @@ import top.vchao.hevttc.R;
 /**
  * 创建日期:2017/8/4 on 11:34
  * 描述:加载对话框
- * 作者:郑卫超
+ * @ author: vchao  blog: http://blog.csdn.net/zheng_weichao
  */
 
 public class LoadDialog extends Dialog {

@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @ 创建时间: 2017/3/14 on 19:06
  * @ 描述: 天气bean类
- * @ 作者: 郑卫超 QQ:2318723605
+ * @ author: vchao  blog: http://blog.csdn.net/zheng_weichao
  */
 
 public class WeatherBean {

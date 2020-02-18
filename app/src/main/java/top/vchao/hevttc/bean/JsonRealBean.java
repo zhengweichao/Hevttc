@@ -9,12 +9,6 @@ import java.util.List;
  */
 public class JsonRealBean {
 
-
-    /**
-     * code : 200
-     * list : [{"stu_no":"0923160102","name":"崔鹏鹏","sex":"男","birth":"19980925","idcard":"131081199809251015","kaohao":"16131081150974","shenfen":"共青团员","minzu":"汉族","xiaoqu":"秦皇岛","yuanxi":"数学与信息科技学院","zhuanye":"计算机应用技术","banhao":"09231601","xuezhi":"3","cengci":"专科","address":"河北省廊坊市霸州市老堤乡牛岗村","tezheng":"河北"}]
-     */
-
     private String code;
     private List<ListBean> list;
 
@@ -35,24 +29,6 @@ public class JsonRealBean {
     }
 
     public static class ListBean {
-        /**
-         * stu_no : 0923160102
-         * name : 崔鹏鹏
-         * sex : 男
-         * birth : 19980925
-         * idcard : 131081199809251015
-         * kaohao : 16131081150974
-         * shenfen : 共青团员
-         * minzu : 汉族
-         * xiaoqu : 秦皇岛
-         * yuanxi : 数学与信息科技学院
-         * zhuanye : 计算机应用技术
-         * banhao : 09231601
-         * xuezhi : 3
-         * cengci : 专科
-         * address : 河北省廊坊市霸州市老堤乡牛岗村
-         * tezheng : 河北
-         */
 
         private String stu_no;
         private String name;

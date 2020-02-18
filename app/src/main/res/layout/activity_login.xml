@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:hint="手机号"
                 android:inputType="number"
+                android:lines="1"
                 android:maxLength="11" />
         </android.support.design.widget.TextInputLayout>
 
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:hint="密码"
                 android:inputType="textPassword"
+                android:lines="1"
                 android:maxLength="20" />
         </android.support.design.widget.TextInputLayout>
 

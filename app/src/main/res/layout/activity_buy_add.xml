@@ -21,8 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -42,8 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/et_bg"
                 android:orientation="horizontal">
 
@@ -66,8 +66,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/et_bg"
                 android:orientation="horizontal">
 
@@ -119,6 +119,7 @@
                     android:scrollbarStyle="outsideOverlay"
                     app:layoutManager="android.support.v7.widget.GridLayoutManager"
                     app:spanCount="3"
+                    tools:itemCount="1"
                     tools:listitem="@layout/list_item_image" />
             </LinearLayout>
 
@@ -127,8 +128,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/et_bg"
                 android:orientation="horizontal">
 
