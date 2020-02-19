@@ -44,11 +44,6 @@ public class FindThingFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
-    }
-
-    @Override
     protected void initData() {
         findAdapter = new GeneralAdapter();
         findBeen = new ArrayList<>();

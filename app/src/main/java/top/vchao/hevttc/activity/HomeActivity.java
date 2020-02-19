@@ -2,7 +2,6 @@ package top.vchao.hevttc.activity;
 
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +10,7 @@ import top.vchao.hevttc.R;
 import top.vchao.hevttc.fragment.TabHomeFragment;
 import top.vchao.hevttc.fragment.TabMyFragment;
 import top.vchao.hevttc.fragment.TabNewsFragment;
+import top.vchao.hevttc.utils.ToastUtil;
 import top.vchao.hevttc.view.BottomTabView;
 
 /**
@@ -43,7 +43,6 @@ public class HomeActivity extends BottomTabBaseActivity {
         return fragments;
     }
 
-
     /**
      * 重写返回键返回方法，防止误触退出
      *
@@ -55,7 +54,7 @@ public class HomeActivity extends BottomTabBaseActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
-                Toast.makeText(HomeActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                ToastUtil.showShort("再按一次退出");
                 mExitTime = System.currentTimeMillis();
             } else {
                 finish();
@@ -66,23 +65,4 @@ public class HomeActivity extends BottomTabBaseActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-   /*
-   // 中间按钮
-   @Override
-    protected View getCenterView() {
-        ImageView centerView = new ImageView(this);
-        centerView.setImageResource(R.mipmap.ic_launcher_round);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(200, 200);
-        layoutParams.leftMargin = 60;
-        layoutParams.rightMargin = 60;
-        layoutParams.bottomMargin = 0;
-        centerView.setLayoutParams(layoutParams);
-        centerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(TestBottomTabBaseActivity.this, "centerView 点击了", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return centerView;
-    }*/
 }

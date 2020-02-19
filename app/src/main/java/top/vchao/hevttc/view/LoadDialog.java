@@ -9,13 +9,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import top.vchao.hevttc.R;
+import top.vchao.hevttc.utils.ToastUtil;
 
 /**
  * 创建日期:2017/8/4 on 11:34
  * 描述:加载对话框
+ *
  * @ author: vchao  blog: http://blog.csdn.net/zheng_weichao
  */
 
@@ -77,7 +78,7 @@ public class LoadDialog extends Dialog {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (!cancelable) {
-                Toast.makeText(getContext(), tipMsg, Toast.LENGTH_SHORT).show();
+                ToastUtil.showShort(tipMsg);
                 return true;
             }
         }

@@ -25,12 +25,12 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
+import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.jw.bean.Course;
 import top.vchao.hevttc.jw.bean.CourseTable;
 import top.vchao.hevttc.jw.bean.ScoreTable;
 import top.vchao.hevttc.jw.bean.StuSimpleInfo;
 import top.vchao.hevttc.jw.bean.User;
-import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.jw.dao.OkHttpDAO;
 import top.vchao.hevttc.jw.tool.HtmlTools;
 

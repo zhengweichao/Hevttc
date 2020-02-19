@@ -28,6 +28,7 @@ public class TeamActivity extends BaseActivity {
 
     @BindView(R.id.rv_team)
     RecyclerView rvTeam;
+
     private GeneralAdapter mAdapter;
     private ArrayList<TeamBean> teamBeen;
 

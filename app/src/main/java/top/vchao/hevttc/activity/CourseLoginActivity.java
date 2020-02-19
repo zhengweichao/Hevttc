@@ -23,22 +23,22 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
 import java.util.Calendar;
 
 import top.vchao.hevttc.R;
+import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.jw.bean.CourseTable;
 import top.vchao.hevttc.jw.bean.User;
-import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.jw.factor.BeanFactor;
 import top.vchao.hevttc.jw.service.BroadcastAction;
 import top.vchao.hevttc.jw.service.DataService;
 import top.vchao.hevttc.utils.DateUtils;
 import top.vchao.hevttc.utils.LogUtils;
 import top.vchao.hevttc.utils.SPUtils;
+import top.vchao.hevttc.utils.ToastUtil;
 
 
 /**
@@ -109,7 +109,7 @@ public class CourseLoginActivity extends BaseAppCompatActivity {
                     Bundle bl = msg.getData();
                     String error = bl.getString(Constant.LOGIN_FAIL);
                     myBinder.getCheckImg();//重新获取验证码
-                    Toast.makeText(CourseLoginActivity.this, error, Toast.LENGTH_SHORT).show();
+                    ToastUtil.showShort(error);
                     break;
                 }
                 case 0x126: {//获取课表
@@ -285,7 +285,6 @@ public class CourseLoginActivity extends BaseAppCompatActivity {
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         String input = et.getText().toString();
-                        Toast.makeText(CourseLoginActivity.this, input, Toast.LENGTH_LONG).show();
                         String url = dealURL(input);
                         SPUtils.setJwUrl(CourseLoginActivity.this, url);//保存到本地
                         mJwUrlView.setText("教务网地址:" + url);//显示修改后的地址

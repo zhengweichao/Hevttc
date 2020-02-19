@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.adapter.ScoreAdapter;
+import top.vchao.hevttc.constant.Constant;
 import top.vchao.hevttc.jw.bean.CourseScore;
 import top.vchao.hevttc.jw.bean.ScoreTable;
-import top.vchao.hevttc.constant.Constant;
 
 /**
  * 成绩表界面

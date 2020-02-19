@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -45,11 +44,6 @@ public class FindLoserFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
-    }
-
-    @Override
     protected void initData() {
         LoseAdapter = new GeneralAdapter();
         LoseBeen = new ArrayList<>();
@@ -64,9 +58,7 @@ public class FindLoserFragment extends BaseFragment {
             public void done(List<LoseItem> object, BmobException e) {
                 if (e == null) {
                     LogUtils.e("查询成功：共" + object.size() + "条数据。");
-                    for (LoseItem loseItem : object) {
-                        LoseBeen.add(loseItem);
-                    }
+                    LoseBeen.addAll(object);
                     LoseAdapter.setData(LoseBeen);
                 } else {
                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());

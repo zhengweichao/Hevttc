@@ -1,21 +1,16 @@
 package top.vchao.hevttc.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.youth.banner.Banner;
-import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -27,12 +22,12 @@ import top.vchao.hevttc.activity.LoseActivity;
 import top.vchao.hevttc.activity.LoveActivity;
 import top.vchao.hevttc.activity.PhotoSchoolActivity;
 import top.vchao.hevttc.activity.TeamActivity;
-import top.vchao.hevttc.activity.WeatherActivity;
 import top.vchao.hevttc.activity.WebActivity;
 import top.vchao.hevttc.activity.XiaoliActivity;
-import top.vchao.hevttc.adapter.MoudleAdapter;
-import top.vchao.hevttc.bean.MoudleItem;
+import top.vchao.hevttc.adapter.GeneralAdapter;
+import top.vchao.hevttc.bean.ModuleItem;
 import top.vchao.hevttc.constant.MyUrl;
+import top.vchao.hevttc.utils.GlideImageLoader;
 import xyz.zpayh.adapter.OnItemClickListener;
 
 /**
@@ -47,45 +42,11 @@ public class TabHomeFragment extends BaseFragment {
     @BindView(R.id.rv_main)
     RecyclerView mRecyclerView;
 
-    private MoudleAdapter moudleAdapter;
-    private ArrayList<MoudleItem> data;
+    private GeneralAdapter moduleAdapter;
+    private ArrayList<ModuleItem> moduleList = new ArrayList<>();
     //首页轮播图   图片资源
-    Integer[] imageses = {R.mipmap.img_keshi1, R.mipmap.img_keshi2, R.mipmap.img_keshi3, R.mipmap.img_keshi4};
-
-    //模块名字   "藏书检索", , "天气"
-    String[] MoudleName = {"表白墙", "校园街景",
-            "校历", "学校官网", "校园通讯录",
-            "图说校园", "社团组织"
-    };
-    //模块图片资源  R.mipmap.ic_home_news,
-    int[] MoudleLogo = {R.mipmap.ic_home_loveshow, R.mipmap.ic_home_tellall,
-            R.mipmap.ic_home_schooldate, R.mipmap.ic_home_schoolguide, R.mipmap.ic_home_numbernote,
-            R.mipmap.ic_home_buysale, R.mipmap.ic_home_friends, R.mipmap.ic_home_friends,
-            R.mipmap.ic_home_friends};
-    //模块对应页面 WebActivity.class,
-    Class[] clazz = {LoveActivity.class, WebActivity.class,
-            XiaoliActivity.class, WebActivity.class, ContactsActivity.class,
-            PhotoSchoolActivity.class, TeamActivity.class, WeatherActivity.class,
-            CourseActivity.class
-//            ContactsActivity.class, TeamActivity.class
-    };
-    //传递的信息 MyUrl.URL_QueryBook,
-    String[] PutExtras = {null,
-
-            MyUrl.URL_QQMAP,
-
-            null,
-            MyUrl.URL_HEVTTC,
-            null,
-
-            null, null, null,
-
-            null, null, null,
-
-            null, null, null,
-
-            null, null, null
-    };
+    List<Integer> bannerImages = Arrays.asList(R.mipmap.img_keshi1, R.mipmap.img_keshi2,
+            R.mipmap.img_keshi3, R.mipmap.img_keshi4);
 
     @Override
     protected int getLayoutId() {
@@ -94,40 +55,46 @@ public class TabHomeFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        //设置布局管理器
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 4));
+        if (moduleList.size() > 0) {
+            return;
+        }
+        initBanner();
+        initModuleList();
+    }
 
-        ArrayList images = new ArrayList<>();
-        data = new ArrayList<>();
+    private void initModuleList() {
+        moduleList.add(new ModuleItem(R.mipmap.ic_home_loveshow, "表白墙", LoveActivity.class));
+        moduleList.add(new ModuleItem(R.mipmap.ic_home_tellall, "校园街景", MyUrl.URL_QQMAP, WebActivity.class));
+        moduleList.add(new ModuleItem(R.mipmap.ic_home_schooldate, "校历", XiaoliActivity.class));
+        moduleList.add(new ModuleItem(R.mipmap.ic_home_schoolguide, "学校官网", MyUrl.URL_HEVTTC, WebActivity.class));
+
+        moduleList.add(new ModuleItem(R.mipmap.ic_home_numbernote, "校园通讯录", ContactsActivity.class));
+        moduleList.add(new ModuleItem(R.mipmap.ic_home_buysale, "图说校园", PhotoSchoolActivity.class));
+        moduleList.add(new ModuleItem(R.mipmap.ic_home_friends, "社团组织", TeamActivity.class));
+
+        moduleAdapter = new GeneralAdapter();
+        moduleAdapter.setData(moduleList);
+        mRecyclerView.setAdapter(moduleAdapter);
+    }
+
+    private void initBanner() {
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
-        //填充轮播图列表
-        for (int i = 0; i < imageses.length; i++) {
-            images.add(imageses[i]);
-        }
         banner.setDelayTime(3500);//设置轮播时间
-        banner.setImages(images);//设置图片集合
+        banner.setImages(bannerImages);//设置图片集合
         banner.start();//banner设置方法全部调用完毕时最后调用
-        //填充模块信息列表
-        for (int i = 0; i < MoudleName.length; i++) {
-            MoudleItem moudleItem = new MoudleItem(MoudleLogo[i], MoudleName[i], clazz[i]);
-            data.add(moudleItem);
-        }
-        moudleAdapter = new MoudleAdapter();
-        moudleAdapter.setData(data);
-        mRecyclerView.setAdapter(moudleAdapter);
     }
 
     @Override
     protected void initListener() {
-        moudleAdapter.setOnItemClickListener(new OnItemClickListener() {
+        moduleAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int positon) {
-                MoudleItem item = data.get(positon);
+                ModuleItem item = moduleList.get(positon);
                 //跳转到对应功能的详情页面
-                Intent intent = new Intent(getActivity(), item.getClazz());
-                if (PutExtras[positon] != null) {
-                    intent.putExtra("url", PutExtras[positon]);
+                Intent intent = new Intent(mActivity, item.getClazz());
+                if (!TextUtils.isEmpty(item.getWebUrl())) {
+                    intent.putExtra("url", item.getWebUrl());
                 }
                 startActivity(intent);
             }
@@ -158,14 +125,4 @@ public class TabHomeFragment extends BaseFragment {
         }
     }
 
-    /**
-     * Glide图片加载方法
-     */
-    public class GlideImageLoader extends ImageLoader {
-        @Override
-        public void displayImage(Context context, Object path, ImageView imageView) {
-            //Glide 加载图片
-            Glide.with(context).load(path).into(imageView);
-        }
-    }
 }

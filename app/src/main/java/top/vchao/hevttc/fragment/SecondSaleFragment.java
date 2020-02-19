@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -26,7 +25,7 @@ import xyz.zpayh.adapter.OnItemClickListener;
 /**
  * @ 创建时间: 2017/9/14 on 14:29.
  * @ 描述：二手交易 【换点银子】
- *     用户想要出手二手物品， 展示买的条目列表
+ * 用户想要出手二手物品， 展示买的条目列表
  * @ 作者: vchao
  */
 public class SecondSaleFragment extends BaseFragment {
@@ -45,11 +44,6 @@ public class SecondSaleFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
-    }
-
-    @Override
     protected void initData() {
         mAdapter = new GeneralAdapter();
         buyBeen = new ArrayList<>();
@@ -63,10 +57,7 @@ public class SecondSaleFragment extends BaseFragment {
             public void done(List<BuyItem> object, BmobException e) {
                 if (e == null) {
                     LogUtils.e("查询成功：共" + object.size() + "条数据。");
-                    for (BuyItem loseItem : object) {
-                        buyBeen.add(loseItem);
-                        LogUtils.e(loseItem.getAuthor());
-                    }
+                    buyBeen.addAll(object);
                     mAdapter.setData(buyBeen);
                 } else {
                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());

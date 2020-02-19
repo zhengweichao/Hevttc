@@ -18,6 +18,10 @@ import top.vchao.hevttc.bean.WeatherBean;
 import top.vchao.hevttc.utils.ToastUtil;
 import top.vchao.hevttc.view.BlurredView;
 
+/**
+ * 天气页面
+ * （未完成）
+ */
 public class WeatherActivity extends BaseActivity {
     /*========== 控件相关 ===========*/
     private BlurredView weatherBView;           //背景模糊图

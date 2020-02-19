@@ -8,7 +8,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,11 +62,6 @@ public class NewsListFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-    }
-
-    @Override
     protected void initListener() {
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -98,7 +92,7 @@ public class NewsListFragment extends BaseFragment {
                                     LogUtils.e("查询成功：共" + object.size() + "条数据。");
                                     refreshCount++;
                                     if (object.size() == 0) {
-                                        ToastUtil.show(getActivity(), "暂无更多数据", Toast.LENGTH_SHORT);
+                                        ToastUtil.showShort("暂无更多数据");
                                     } else {
                                         for (NewsBean newsBean : object) {
                                             newsBeanList.add(0, newsBean);

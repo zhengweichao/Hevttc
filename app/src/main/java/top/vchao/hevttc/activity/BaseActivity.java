@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
@@ -38,7 +37,6 @@ public abstract class BaseActivity extends FragmentActivity {
         initData();
         initListener();
 
-        initFragment();
     }
 
     protected void dealBundle(@Nullable Bundle savedInstanceState) {
@@ -56,10 +54,6 @@ public abstract class BaseActivity extends FragmentActivity {
         });
     }
 
-    protected void initFragment() {
-
-    }
-
     protected void initActionBar() {
 
     }
@@ -68,29 +62,6 @@ public abstract class BaseActivity extends FragmentActivity {
      * 获取上一个页面传递来的intent数据
      */
     protected void getPreIntent() {
-    }
-
-
-    /**
-     * 初始化标题栏
-     *
-     * @param color
-     * @param text
-     */
-    protected void initTitleBar(int color, int text) {
-        View btn_back = findViewById(R.id.btn_back);
-        if (btn_back != null) {
-            btn_back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
-        LinearLayout layout_title = (LinearLayout) findViewById(R.id.layout_title);
-        layout_title.setBackgroundResource(color);
-        TextView tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvTitle.setText(this.getResources().getString(text));
     }
 
     protected void initTitleBar(String text) {

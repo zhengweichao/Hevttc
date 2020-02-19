@@ -21,7 +21,6 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import top.vchao.hevttc.R;
 import top.vchao.hevttc.adapter.GeneralAdapter;
-import top.vchao.hevttc.adapter.RecyclerAdapter;
 import top.vchao.hevttc.bean.PhotoBean;
 import top.vchao.hevttc.utils.LogUtils;
 import top.vchao.hevttc.utils.RomUtils;
@@ -143,36 +142,6 @@ public class PhotoSchoolActivity extends BaseActivity {
                 }).start();
             }
         });
-    }
-
-    /**
-     * 设置纵向瀑布流
-     */
-    private void initStaggerAdapterV() {
-        StaggeredGridLayoutManager layoutManger = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManger);
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(PhotoSchoolActivity.this, mStaggerData);
-        recyclerAdapter.setOnItemClickLitener(new RecyclerAdapter.OnItemClickLitener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                LogUtils.e("onItemClick: " + position);
-                Intent intent = new Intent(PhotoSchoolActivity.this, PicDetailActivity.class);
-                intent.putExtra("bean", mStaggerData.get(position));
-                if (RomUtils.isAndroid5()) {
-                    Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(PhotoSchoolActivity.this, view, "shareView").toBundle();
-                    startActivity(intent, bundle);
-                } else {
-                    startActivity(intent);
-                }
-            }
-
-            @Override
-            public void onItemLongClick(View view, int position) {
-
-            }
-        });
-
-        mRecyclerView.setAdapter(recyclerAdapter);
     }
 
 }

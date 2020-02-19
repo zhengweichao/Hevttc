@@ -1,6 +1,8 @@
 package top.vchao.hevttc.utils;
 
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 
 import com.github.promeg.pinyinhelper.Pinyin;
 
@@ -17,6 +19,48 @@ import top.vchao.hevttc.bean.Teacher;
  */
 
 public class CommonUtil {
+    /**
+     * 检查 EditText 是否为空
+     *
+     * @return 空 true   非空 false
+     */
+    public static boolean isEmpty(EditText et) {
+        if (et != null) {
+            String s = et.getText().toString();
+            if (!TextUtils.isEmpty(s)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 获取文本框内容
+     *
+     * @return 有数据  true   空false
+     */
+    public static String getText(EditText et) {
+        if (!isEmpty(et)) {
+            String s = et.getText().toString().trim();
+            return s;
+        }
+        return "";
+    }
+
+    /**
+     * 判断是否所有EditText内容都不为空
+     *
+     * @param editTexts
+     * @return
+     */
+    public static boolean isAllNotNull(EditText... editTexts) {
+        for (EditText editText : editTexts) {
+            if (isEmpty(editText)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     /**
      * 测量View的宽高

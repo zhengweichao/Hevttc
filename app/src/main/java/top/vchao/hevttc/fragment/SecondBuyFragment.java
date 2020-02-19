@@ -26,7 +26,7 @@ import xyz.zpayh.adapter.OnItemClickListener;
 /**
  * @ 创建时间: 2017/9/14 on 14:20.
  * @ 描述：二手交易 【淘点宝贝】
- *     用户想要买二手物品， 展示卖的条目列表
+ * 用户想要买二手物品， 展示卖的条目列表
  * @ 作者: vchao
  */
 public class SecondBuyFragment extends BaseFragment {
@@ -41,11 +41,6 @@ public class SecondBuyFragment extends BaseFragment {
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_main;
-    }
-
-    @Override
-    protected void initView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
     }
 
     @Override

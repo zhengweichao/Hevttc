@@ -28,6 +28,8 @@ import top.vchao.hevttc.R;
 import top.vchao.hevttc.bean.JsonRealBean;
 import top.vchao.hevttc.bean.MyUser;
 import top.vchao.hevttc.constant.MyUrl;
+import top.vchao.hevttc.constant.SPkey;
+import top.vchao.hevttc.utils.CommonUtil;
 import top.vchao.hevttc.utils.LogUtils;
 import top.vchao.hevttc.utils.SPUtils;
 import top.vchao.hevttc.utils.ToastUtil;
@@ -64,8 +66,6 @@ public class UserInfoActivity extends BaseActivity {
     LinearLayout llUserInfoClass;
     @BindView(R.id.bt_real_name)
     Button btRealName;
-    private EditText et_real_stuno;
-    private EditText et_real_name;
 
     @Override
     protected int getLayoutId() {
@@ -99,25 +99,20 @@ public class UserInfoActivity extends BaseActivity {
      */
     private void RealName() {
         View view = LayoutInflater.from(UserInfoActivity.this).inflate(R.layout.dialog_reallyname, null);
-        et_real_stuno = (EditText) view.findViewById(R.id.et_real_stuno);
-        et_real_name = (EditText) view.findViewById(R.id.et_real_name);
+        final EditText et_real_stuno = (EditText) view.findViewById(R.id.et_real_stuno);
+        final EditText et_real_name = (EditText) view.findViewById(R.id.et_real_name);
 
         AlertDialog dialog = new AlertDialog.Builder(UserInfoActivity.this)
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
+                .setNegativeButton("取消", null)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String name = et_real_name.getText().toString().trim();
-                        String stuno = et_real_stuno.getText().toString().trim();
-                        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(stuno)) {
-                            ToastUtil.show(UserInfoActivity.this, "请填写完整信息", Toast.LENGTH_SHORT);
+                        String name = CommonUtil.getText(et_real_name);
+                        String stuno = CommonUtil.getText(et_real_stuno);
+                        if (CommonUtil.isAllNotNull(et_real_name, et_real_stuno)) {
+                            UpdateReal(name, stuno);
                         } else {
-                            UpdateReal();
+                            ToastUtil.showShort("请填写完整信息");
                         }
                     }
                 })
@@ -128,10 +123,8 @@ public class UserInfoActivity extends BaseActivity {
         dialog.show();
     }
 
-    private void UpdateReal() {
+    private void UpdateReal(String name, final String stuno) {
         LoadDialog.show(UserInfoActivity.this, "实名认证中");
-        String name = et_real_name.getText().toString().trim();
-        final String stuno = et_real_stuno.getText().toString().trim();
         OkGo.get(MyUrl.URL_QUERY)
                 .params("stuname", name)
                 .execute(new StringCallback() {
@@ -139,9 +132,9 @@ public class UserInfoActivity extends BaseActivity {
                     public void onSuccess(String s, Call call, Response response) {
                         LogUtils.e("onSuccess: " + s);
                         JsonRealBean jsonRealBean = new Gson().fromJson(s, JsonRealBean.class);
-                        LogUtils.e("onSuccess: " + jsonRealBean.getList().get(0).getStu_no() + ":::::" + jsonRealBean.getList().size());
+
                         for (int i = 0; i < jsonRealBean.getList().size(); i++) {
-                            if (stuno.equals(jsonRealBean.getList().get(i).getStu_no() + "")) {
+                            if (TextUtils.equals(stuno, jsonRealBean.getList().get(i).getStu_no() + "")) {
                                 tvUserInfoName.setText(jsonRealBean.getList().get(i).getName());
                                 tvUserInfoSex.setText(jsonRealBean.getList().get(i).getSex());
                                 tvUserInfoStuno.setText(jsonRealBean.getList().get(i).getStu_no());
@@ -179,6 +172,12 @@ public class UserInfoActivity extends BaseActivity {
                         }
                         LoadDialog.dismiss(UserInfoActivity.this);
                     }
+
+                    @Override
+                    public void onError(Call call, Response response, Exception e) {
+                        super.onError(call, response, e);
+                        LoadDialog.dismiss(UserInfoActivity.this);
+                    }
                 });
     }
 
@@ -212,7 +211,10 @@ public class UserInfoActivity extends BaseActivity {
             case R.id.ll_user_info_sex:
             case R.id.ll_user_info_stuno:
             case R.id.ll_user_info_yuan:
-                RealName();
+                String isReal = SPUtils.look(UserInfoActivity.this, SPkey.isRealName, "false");
+                if (!TextUtils.equals(isReal, "true")) {
+                    RealName();
+                }
         }
     }
 }

@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
@@ -32,6 +31,7 @@ import top.vchao.hevttc.constant.MyUrl;
 import top.vchao.hevttc.db.LoveDao;
 import top.vchao.hevttc.fragment.AnswerFragment;
 import top.vchao.hevttc.utils.LogUtils;
+import top.vchao.hevttc.utils.ToastUtil;
 
 /**
  * @ 创建时间: 2017/6/13 on 17:08.
@@ -182,7 +182,7 @@ public class AnswerActivity extends BaseActivity implements Chronometer.OnChrono
             case R.id._btn_previous:
 //                如果是第一题，则谈吐司提醒，否则上移一道题
                 if (nowpager == 0) {
-                    Toast.makeText(AnswerActivity.this, "已经到头啦!", Toast.LENGTH_SHORT).show();
+                    ToastUtil.showShort("已经到头啦!");
                 } else {
                     vp_answer.setCurrentItem(--nowpager);
                 }
@@ -191,7 +191,7 @@ public class AnswerActivity extends BaseActivity implements Chronometer.OnChrono
             case R.id._btn_submit:
 //                简答题不进行提交评分
                 if (type.equals("3")) {
-                    Toast.makeText(this, "简答题目前暂不支持评分", Toast.LENGTH_SHORT).show();
+                    ToastUtil.showShort("简答题目前暂不支持评分");
                     return;
                 }
 //                否则初始化并展示提交对话框
@@ -202,7 +202,7 @@ public class AnswerActivity extends BaseActivity implements Chronometer.OnChrono
             case R.id._btn_next:
 //                如果是最后一题，则谈吐司提醒，否则下移一道题
                 if (nowpager == fragmentlists.size()) {
-                    Toast.makeText(AnswerActivity.this, "已经是最后一题了!", Toast.LENGTH_SHORT).show();
+                    ToastUtil.showShort("已经是最后一题了!");
                 } else {
                     vp_answer.setCurrentItem(++nowpager);
                 }

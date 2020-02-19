@@ -38,7 +38,6 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         initData();
         initListener();
 
-        initFragment();
     }
 
     private void initBack() {
@@ -50,10 +49,6 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
                 finish();
             }
         });
-    }
-
-    protected void initFragment() {
-
     }
 
     protected void initActionBar() {

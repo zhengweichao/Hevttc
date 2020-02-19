@@ -108,13 +108,8 @@ public class TabMyFragment extends BaseFragment {
                 startActivity(intent);
                 break;
             case R.id.btn_my_logout:
-                AlertDialog UpTeldialog = new AlertDialog.Builder(mActivity)
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
+                new AlertDialog.Builder(mActivity)
+                        .setNegativeButton("取消", null)
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -124,9 +119,8 @@ public class TabMyFragment extends BaseFragment {
                         .setTitle("退出登录")
                         .setMessage("确定要退出登录吗？")
                         .setIcon(R.mipmap.ic_app_logo)
-                        .create();
-//                UpTeldialog.setCanceledOnTouchOutside(false);
-                UpTeldialog.show();
+                        .create()
+                        .show();
                 break;
         }
     }

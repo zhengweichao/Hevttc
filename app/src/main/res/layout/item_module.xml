@@ -22,11 +22,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_item_logo"
-        android:layout_marginBottom="8dp"
         android:layout_marginTop="3dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:textSize="15sp"
-        tools:text="Hello World" />
+        android:textSize="14sp"
+        tools:text="科师有约" />
 
 </RelativeLayout>
 

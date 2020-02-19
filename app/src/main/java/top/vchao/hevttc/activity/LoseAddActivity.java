@@ -175,7 +175,7 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
                     public void onError(Throwable e) {
                         // 当压缩过程出现问题时调用
                         LoadDialog.dismiss(LoseAddActivity.this);
-                        Toast.makeText(LoseAddActivity.this, "压缩失败！", Toast.LENGTH_SHORT).show();
+                        ToastUtil.showShort("压缩失败！");
                     }
                 }).launch();    //启动压缩
     }
@@ -244,7 +244,7 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
                 @Override
                 public void onError(int statuscode, String errormsg) {
                     LogUtils.e("错误码" + statuscode + ",错误描述：" + errormsg);
-                    Toast.makeText(LoseAddActivity.this, "发生错误，请稍后重试", Toast.LENGTH_SHORT).show();
+                    ToastUtil.showShort("发生错误，请稍后重试");
 
                     LoadDialog.dismiss(LoseAddActivity.this);
                 }
@@ -388,7 +388,7 @@ public class LoseAddActivity extends BaseActivity implements ImagePickerAdapter.
                 BmobUpSale(false);
             }
         } else {
-            Toast.makeText(this, "请将信息填写完整！", Toast.LENGTH_SHORT).show();
+            ToastUtil.showShort("请将信息填写完整！");
         }
     }
 

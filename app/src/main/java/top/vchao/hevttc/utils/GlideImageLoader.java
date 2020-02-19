@@ -1,6 +1,7 @@
 package top.vchao.hevttc.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.widget.ImageView;
 
@@ -17,7 +18,7 @@ import top.vchao.hevttc.R;
  * @ 描述：Glide图片加载
  * @ 作者: vchao
  */
-public class GlideImageLoader implements ImageLoader {
+public class GlideImageLoader extends com.youth.banner.loader.ImageLoader implements ImageLoader {
 
     @Override
     public void displayImage(Activity activity, String path, ImageView imageView, int width, int height) {
@@ -46,5 +47,10 @@ public class GlideImageLoader implements ImageLoader {
 
     @Override
     public void clearMemoryCache() {
+    }
+
+    @Override
+    public void displayImage(Context context, Object path, ImageView imageView) {
+        Glide.with(context).load(path).into(imageView);
     }
 }

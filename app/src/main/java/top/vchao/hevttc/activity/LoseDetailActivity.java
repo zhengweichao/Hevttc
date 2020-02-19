@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -16,6 +15,7 @@ import top.vchao.hevttc.R;
 import top.vchao.hevttc.bean.FindItem;
 import top.vchao.hevttc.bean.LoseItem;
 import top.vchao.hevttc.utils.LogUtils;
+import top.vchao.hevttc.utils.ToastUtil;
 
 /**
  * @ 创建时间: 2017/10/3 on 16:03.
@@ -86,20 +86,20 @@ public class LoseDetailActivity extends BaseActivity {
 
     @OnClick(R.id.bt_detail_lose_tel)
     public void onViewClicked() {
-        if (!(losebean == null)) {
+        if (losebean != null) {
             LogUtils.e("TEL:" + losebean.getTel());
             //跳到拨号页面
             Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + losebean.getTel()));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
-        } else if (!(findbean == null)) {
+        } else if (findbean != null) {
             LogUtils.e("TEL:" + findbean.getTel());
             //跳到拨号页面
             Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + findbean.getTel()));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "该用户没有留下电话信息，请私信尝试", Toast.LENGTH_SHORT).show();
+            ToastUtil.showShort("该用户没有留下电话信息，请私信尝试");
         }
     }
 
