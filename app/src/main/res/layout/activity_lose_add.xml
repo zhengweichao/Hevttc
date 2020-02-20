@@ -162,7 +162,7 @@
                     app:layoutManager="android.support.v7.widget.GridLayoutManager"
                     app:spanCount="3"
                     tools:itemCount="1"
-                    tools:listitem="@layout/list_item_image" />
+                    tools:listitem="@layout/item_select_image" />
             </LinearLayout>
 
             <LinearLayout

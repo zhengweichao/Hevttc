@@ -7,10 +7,7 @@ import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,13 +31,12 @@ import xyz.zpayh.adapter.OnItemClickListener;
  */
 public class PhotoSchoolActivity extends BaseActivity {
 
-    @BindView(R.id.rv_my)
-    RecyclerView mRecyclerView;
+    @BindView(R.id.rv_photo_school)
+    RecyclerView rvPhotoSchool;
     @BindView(R.id.spl_main)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
-    private List<PhotoBean> mStaggerData;
-
+    private List<PhotoBean> photoBeanList;
     private GeneralAdapter photoAdapter;
     private int refreshCount = 1;
 
@@ -49,14 +45,9 @@ public class PhotoSchoolActivity extends BaseActivity {
         return R.layout.activity_photo_school;
     }
 
-    @Override
-    protected void initView() {
-        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-    }
-
     protected void initData() {
         photoAdapter = new GeneralAdapter();
-        mStaggerData = new ArrayList<PhotoBean>();
+        photoBeanList = new ArrayList<PhotoBean>();
         BmobQuery<PhotoBean> query = new BmobQuery<PhotoBean>();
         query.order("id");
         //返回10条数据，默认返回10条数据
@@ -66,16 +57,15 @@ public class PhotoSchoolActivity extends BaseActivity {
             @Override
             public void done(List<PhotoBean> object, BmobException e) {
                 if (e == null) {
-                    mStaggerData.addAll(object);
-                    photoAdapter.setData(mStaggerData);
+                    photoBeanList.addAll(object);
+                    photoAdapter.setData(photoBeanList);
                 } else {
                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
                 }
             }
         });
-        mRecyclerView.setAdapter(photoAdapter);
+        rvPhotoSchool.setAdapter(photoAdapter);
 
-        initRefresh();
     }
 
     @Override
@@ -83,9 +73,8 @@ public class PhotoSchoolActivity extends BaseActivity {
         photoAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull View view, int position) {
-                LogUtils.e("onItemClick: " + position);
                 Intent intent = new Intent(PhotoSchoolActivity.this, PicDetailActivity.class);
-                intent.putExtra("bean", mStaggerData.get(position));
+                intent.putExtra("bean", photoBeanList.get(position));
                 if (RomUtils.isAndroid5()) {
                     Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(PhotoSchoolActivity.this,
                             view.findViewById(R.id.iv_icon),
@@ -96,12 +85,7 @@ public class PhotoSchoolActivity extends BaseActivity {
                 }
             }
         });
-    }
 
-    /**
-     * 刷新
-     */
-    private void initRefresh() {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -119,20 +103,17 @@ public class PhotoSchoolActivity extends BaseActivity {
                             public void done(List<PhotoBean> object, BmobException e) {
                                 if (e == null) {
                                     refreshCount++;
-                                    Log.e("zwc", "查询成功：共" + object.size() + "条数据。");
                                     if (object.size() == 0) {
-                                        ToastUtil.show(PhotoSchoolActivity.this, "暂无更多数据", Toast.LENGTH_SHORT);
+                                        ToastUtil.showShort("暂无更多数据");
                                     } else {
                                         for (PhotoBean bean : object) {
-                                            mStaggerData.add(0, bean);
+                                            photoBeanList.add(0, bean);
                                         }
-                                        photoAdapter.setData(mStaggerData);
-                                        //得到adapter.然后刷新
-                                        mRecyclerView.getAdapter().notifyDataSetChanged();
+                                        photoAdapter.setData(photoBeanList);
+                                        photoAdapter.notifyDataSetChanged();
                                     }
                                     //停止刷新操作
                                     mSwipeRefreshLayout.setRefreshing(false);
-
                                 } else {
                                     LogUtils.e("失败：" + e.getMessage() + "," + e.getErrorCode());
                                 }

@@ -13,9 +13,10 @@
         android:paddingRight="10dp">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_my"
+            android:id="@+id/rv_photo_school"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
             app:spanCount="2"
             tools:itemCount="10"

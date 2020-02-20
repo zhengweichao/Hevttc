@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:padding="5dp">
 
-
     <ImageView
         android:id="@+id/iv_img"
         android:layout_width="70dp"

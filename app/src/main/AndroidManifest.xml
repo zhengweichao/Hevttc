@@ -115,7 +115,7 @@
             android:label="科师有约">
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/ocurse_widget_info" />
+                android:resource="@xml/course_widget_info" />
 
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
