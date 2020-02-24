@@ -63,7 +63,10 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+//            开启混淆
+            minifyEnabled true
+//            打开资源压缩
+            shrinkResources true
             multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -92,7 +95,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation('cn.bmob.android:bmob-sdk:3.5.7')
-    implementation 'io.github.zhitaocai:toastcompat:0.1.0'
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     implementation 'com.github.promeg:tinypinyin:2.0.3'
     implementation 'com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3'
@@ -120,5 +122,5 @@ dependencies {
 }
 
 static def releaseTime() {
-    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("GMT+8"))
+    return new Date().format("yyyyMMddHHmm", TimeZone.getTimeZone("GMT+8"))
 }
