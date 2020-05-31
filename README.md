@@ -18,16 +18,21 @@
 密码：aa
 
 #### apk体验地址
-https://fir.im/hnust
+
+http://fir.vbug.cn/hnust
 
 #### 博客文章：
 1. [手把手带你撸一个校园APP（一）：项目简介](https://vchao.blog.csdn.net/article/details/80787263)
 2. [手把手带你撸一个校园APP（二）：应用启动和欢迎页面](https://vchao.blog.csdn.net/article/details/81456617)
 3. [手把手带你撸一个校园APP（三）：用户模块（登录注册等）](https://vchao.blog.csdn.net/article/details/81837608)
-4. [手把手带你撸一个校园APP（四）：APP框架及功能设计](https://blog.csdn.net/zheng_weichao/article/details/104209803)
-5. 手把手带你撸一个校园APP（五）：新闻中心模块
-6. 手把手带你撸一个校园APP（六）：失物招领&二手交易模块
-7. 手把手带你撸一个校园APP（七）：图说校园模块
-8. 手把手带你撸一个校园APP（八）：校园通讯录模块
+4. [手把手带你撸一个校园APP（四）：APP框架及功能设计](https://vchao.blog.csdn.net/article/details/104209803)
+5. [手把手带你撸一个校园APP（五）：新闻页面中心模块](https://vchao.blog.csdn.net/article/details/104227390)
+6. [手把手带你撸一个校园APP（六）：失物招领&二手交易模块](https://vchao.blog.csdn.net/article/details/104245390)
+7. [手把手带你撸一个校园APP（七）：校园文化模块（社团活动&表白墙&图说校园）](https://vchao.blog.csdn.net/article/details/104273994)
+8. [手把手带你撸一个校园APP（八）：校园通讯录模块](https://vchao.blog.csdn.net/article/details/104372075)
 9. 手把手带你撸一个校园APP（九）：课程表模块（模拟登录爬取教务处课程信息）
 10. 手把手带你撸一个校园APP（十）：APP通用模块（更新，意见反馈等）
+
+##参考内容：
+- [5分钟搞定android混淆](https://www.jianshu.com/p/f3455ecaa56e)
+- [仿魅族通讯录](https://www.jianshu.com/p/7b7b7ee80c44)
